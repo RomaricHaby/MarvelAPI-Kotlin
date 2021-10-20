@@ -1,6 +1,6 @@
-package fr.iem.usecase.md5
+package com.marvel.usecase.md5
 
-import fr.iem.usecase.UseCase
+import com.marvel.usecase.UseCase
 import java.math.BigInteger
 import java.security.MessageDigest
 

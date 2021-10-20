@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_location"
+        android:enabled="true"
+        android:icon="@drawable/ic_comics"
+        android:title="@string/bottom_navigation_menu_comics" />
+    <item
+        android:id="@+id/action_character"
+        android:enabled="true"
+        android:icon="@drawable/ic_character"
+        android:title="@string/bottom_navigation_menu_character" />
+    <item
+        android:id="@+id/action_episode"
+        android:enabled="true"
+        android:icon="@drawable/ic_favorite"
+        android:title="@string/bottom_navigation_menu_fav" />
+</menu>
