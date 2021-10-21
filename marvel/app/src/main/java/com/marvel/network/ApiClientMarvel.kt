@@ -1,4 +1,4 @@
-package fr.iem.usecase.marvel.apimarvel
+package com.marvel.network
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

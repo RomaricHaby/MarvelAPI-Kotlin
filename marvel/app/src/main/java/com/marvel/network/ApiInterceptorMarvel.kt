@@ -1,7 +1,7 @@
-package fr.iem.usecase.marvel.apimarvel
+package com.marvel.network
 
-import fr.iem.manager.ResourcesManager
-import fr.iem.usecase.md5.GetMD5UseCase
+import com.marvel.manager.ResourcesManager
+import com.marvel.usecase.md5.GetMD5UseCase
 import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -14,6 +14,7 @@ class ApiInterceptorMarvel : Interceptor {
         val requestBuilder = chain.request().newBuilder()
 
         val timestamp = LocalDateTime.now().toString()
+
         val hash =
             runBlocking { GetMD5UseCase(timestamp + ResourcesManager.privateKey + ResourcesManager.publicKey).execute() }
 

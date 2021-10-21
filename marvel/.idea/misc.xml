@@ -7,12 +7,16 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/bottom_nav.xml" value="0.3380208333333333" />
         <entry key="app/src/main/res/layout/fragment_character.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_comics.xml" value="0.18655549765502866" />
+        <entry key="app/src/main/res/layout/fragment_favoris.xml" value="0.2657634184471079" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/view_holder_character.xml" value="0.5" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.37083333333333335" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/action_location"
+        android:id="@+id/action_comics"
         android:enabled="true"
         android:icon="@drawable/ic_comics"
         android:title="@string/bottom_navigation_menu_comics" />
@@ -12,7 +12,7 @@
         android:icon="@drawable/ic_character"
         android:title="@string/bottom_navigation_menu_character" />
     <item
-        android:id="@+id/action_episode"
+        android:id="@+id/action_fav"
         android:enabled="true"
         android:icon="@drawable/ic_favorite"
         android:title="@string/bottom_navigation_menu_fav" />

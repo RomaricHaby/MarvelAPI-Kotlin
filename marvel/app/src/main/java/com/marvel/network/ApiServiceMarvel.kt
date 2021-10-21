@@ -1,7 +1,7 @@
-package fr.iem.usecase.marvel.apimarvel
+package com.marvel.network
 
-import fr.iem.modele.character.ResponseCharacterAPI
-import fr.iem.modele.comics.ResponseComicsAPI
+import com.marvel.modele.characters.ResponseCharacterAPI
+import com.marvel.modele.comics.ResponseComicsAPI
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

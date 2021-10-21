@@ -1,9 +1,9 @@
 package com.marvel.manager
 
+import android.content.res.Resources
+import com.marvel.BuildConfig
+import com.marvel.R
 import java.io.File
-import java.io.FileInputStream
-import java.io.IOException
-import java.util.*
 
 object ResourcesManager {
     var publicKey: String = ""
@@ -19,18 +19,7 @@ object ResourcesManager {
     }
 
     fun loadKeyAPI() {
-        val file = File(PATH + "resources/marvel_api_key.properties")
-        try {
-            FileInputStream(file).use { input ->
-                val prop = Properties()
-
-                prop.load(input)
-
-                privateKey = prop.getProperty("private")
-                publicKey = prop.getProperty("public")
-            }
-        } catch (ex: IOException) {
-            ex.printStackTrace()
-        }
+        privateKey = BuildConfig.marvel_api_private
+        publicKey = BuildConfig.marvel_api_public
     }
 }
