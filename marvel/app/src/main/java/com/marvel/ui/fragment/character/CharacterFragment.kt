@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.ui.fragment.character.recyclerview.CharacterAdapter
+import com.marvel.usecase.character.GetAllCharacterUseCase
 import com.marvel.usecase.character.GetCharacterUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -42,15 +43,16 @@ class CharacterFragment : Fragment() , CoroutineScope by MainScope(){
 
         launch(Dispatchers.Main) {
             try {
-                val ironMan = GetCharacterUseCase("1009368").execute().getOrThrow()
-                val data = ironMan?.dataCharacter?.results
+                //val ironMan = GetCharacterUseCase("1009368").execute().getOrThrow()
+                val character = GetAllCharacterUseCase().execute().getOrThrow()
+                val data = character?.dataCharacter?.results
 
                 // This will pass the ArrayList to our Adapter
                 val adapter = CharacterAdapter(data)
 
                 // Setting the Adapter with the recyclerview
                 recyclerview.adapter = adapter
-                Toast.makeText(context, ironMan?.dataCharacter?.results?.get(0)?.name, Toast.LENGTH_LONG).show()
+                Toast.makeText(context, character?.dataCharacter?.results?.get(0)?.name, Toast.LENGTH_LONG).show()
             } catch (e: Exception) {
                 Toast.makeText(context, "Error Occurred: ${e.message}", Toast.LENGTH_LONG).show()
             }

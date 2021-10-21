@@ -8,6 +8,10 @@ import retrofit2.http.Path
 
 interface ApiServiceMarvel {
 
+
+    @GET("/v1/public/characters")
+    suspend fun getAllCharacter(): Response<ResponseCharacterAPI>
+
     @GET("/v1/public/characters/{id}")
     suspend fun getCharacter(
         @Path("id") id: String,
