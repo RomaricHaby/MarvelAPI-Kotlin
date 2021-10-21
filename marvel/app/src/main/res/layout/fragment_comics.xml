@@ -6,9 +6,10 @@
     tools:context=".ui.fragment.comics.ComicsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewComics"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="comics" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

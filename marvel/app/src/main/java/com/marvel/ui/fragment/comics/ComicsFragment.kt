@@ -5,55 +5,56 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
+import com.marvel.ui.fragment.character.recyclerview.CharacterAdapter
+import com.marvel.ui.fragment.comics.recyclerview.ComicsAdapter
+import com.marvel.usecase.character.GetAllCharacterUseCase
+import com.marvel.usecase.comics.GetAllComicsUseCase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ComicsFragment : Fragment(), CoroutineScope by MainScope() {
+    private lateinit var recyclerView: RecyclerView
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ComicsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ComicsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        val view = inflater.inflate(R.layout.fragment_comics, container, false)
+
+        initUI(view)
+        setRecyclerViewComics()
+
+        return view
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_comics, container, false)
+    private fun initUI(view: View) {
+        recyclerView = view.findViewById(R.id.recyclerViewComics)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ComicsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance() =
-            ComicsFragment().apply {
-                arguments = Bundle().apply {
+    private fun setRecyclerViewComics() {
 
-                }
+        // this creates a vertical layout Manager
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        launch(Dispatchers.Main) {
+            try {
+                val comics = GetAllComicsUseCase().execute().getOrThrow()
+                val data = comics?.data?.results
+
+                // This will pass the ArrayList to our Adapter
+                val adapter = ComicsAdapter(data)
+
+                // Setting the Adapter with the recyclerview
+                recyclerView.adapter = adapter
+
+            } catch (e: Exception) {
+                Toast.makeText(context, "Error Occurred: ${e.message}", Toast.LENGTH_LONG).show()
             }
+        }
+
     }
 }

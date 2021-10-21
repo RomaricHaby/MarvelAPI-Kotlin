@@ -20,11 +20,6 @@ import kotlinx.coroutines.launch
 class CharacterFragment : Fragment(), CoroutineScope by MainScope() {
     private lateinit var recyclerView: RecyclerView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // getting the recyclerview by its id
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_character, container, false)
 

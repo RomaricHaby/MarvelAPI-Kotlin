@@ -8,7 +8,7 @@ import retrofit2.http.Path
 
 interface ApiServiceMarvel {
 
-
+    //Characters
     @GET("/v1/public/characters")
     suspend fun getAllCharacter(): Response<ResponseCharacterAPI>
 
@@ -17,9 +17,13 @@ interface ApiServiceMarvel {
         @Path("id") id: String,
     ): Response<ResponseCharacterAPI>
 
+    //Comics
     @GET("/v1/public/comics/{id}")
     suspend fun getComics(
         @Path("id") id: String,
     ): Response<ResponseComicsAPI>
+
+    @GET("/v1/public/comics")
+    suspend fun getAllComics(): Response<ResponseComicsAPI>
 
 }
