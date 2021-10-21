@@ -17,33 +17,34 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
-class CharacterFragment : Fragment() , CoroutineScope by MainScope(){
-
-
-
+class CharacterFragment : Fragment(), CoroutineScope by MainScope() {
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // getting the recyclerview by its id
-
-
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_character, container, false)
 
+        initUI(view)
+        setRecyclerViewCharacter()
 
-        val recyclerview = view.findViewById <RecyclerView>(R.id.recyclerViewCharacter)
+        return view
+    }
 
+    private fun initUI(view: View) {
+        recyclerView = view.findViewById(R.id.recyclerViewCharacter)
+    }
+
+    private fun setRecyclerViewCharacter() {
         // this creates a vertical layout Manager
-        recyclerview.layoutManager = LinearLayoutManager(context)
-
-
+        recyclerView.layoutManager = LinearLayoutManager(context)
 
         launch(Dispatchers.Main) {
             try {
-                //val ironMan = GetCharacterUseCase("1009368").execute().getOrThrow()
+                //val character = GetCharacterUseCase("1009368").execute().getOrThrow()
                 val character = GetAllCharacterUseCase().execute().getOrThrow()
                 val data = character?.dataCharacter?.results
 
@@ -51,29 +52,13 @@ class CharacterFragment : Fragment() , CoroutineScope by MainScope(){
                 val adapter = CharacterAdapter(data)
 
                 // Setting the Adapter with the recyclerview
-                recyclerview.adapter = adapter
-                Toast.makeText(context, character?.dataCharacter?.results?.get(0)?.name, Toast.LENGTH_LONG).show()
+                recyclerView.adapter = adapter
+                // Toast.makeText(context, character?.dataCharacter?.results?.get(0)?.name, Toast.LENGTH_LONG).show()
             } catch (e: Exception) {
                 Toast.makeText(context, "Error Occurred: ${e.message}", Toast.LENGTH_LONG).show()
             }
         }
-
-
-
-
-        return view
     }
-/*
-    private fun setRecyclerViewCharacter(characterList: List<Char>) {
-        // Create adapter passing in the sample user data
-        characterAdapter = CharacterAdapter(characterList, mainActivity)
-        // Attach the adapter to the recyclerview to populate items
-        recyclerView!!.adapter = characterAdapter
-        recyclerView!!.layoutManager = LinearLayoutManager(context)
-    }*/
-/*
-    private fun initUI(view: View) {
-        recyclerView = view.findViewById(R.id.recyclerViewCharacter)
-    }*/
+
 
 }

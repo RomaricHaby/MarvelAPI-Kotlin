@@ -5,22 +5,81 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    android:background="@drawable/shape_cel_recyclerview"
     android:padding="10dp">
 
     <ImageView
-        android:id="@+id/viewHolderCharacter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/viewHolderCharacterIMG"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_character" />
 
     <TextView
         android:id="@+id/viewHolderNameCharacter"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/viewHolderCharacter"
-        app:layout_constraintTop_toTopOf="@+id/viewHolderCharacter" />
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/viewHolderCharacterIMG"
+        app:layout_constraintTop_toTopOf="@+id/viewHolderCharacterIMG" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Comics :"
+        app:layout_constraintStart_toStartOf="@+id/viewHolderNameCharacter"
+        app:layout_constraintTop_toBottomOf="@+id/viewHolderNameCharacter" />
+
+    <TextView
+        android:id="@+id/viewHolderCharacterNumberComics"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Series :"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/viewHolderCharacterNumberSerie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/viewHolderCharacterNumberComics"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Stories :"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/viewHolderCharacterNumberStories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/viewHolderCharacterNumberSerie"
+        app:layout_constraintTop_toTopOf="@+id/textView6" />
 </androidx.constraintlayout.widget.ConstraintLayout>

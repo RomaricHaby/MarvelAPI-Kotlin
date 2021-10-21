@@ -11,7 +11,7 @@ class CharacterAdapter(list: List<Hero>?) : RecyclerView.Adapter<CharacterViewHo
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.view_holder_character, parent, false)
-        return CharacterViewHolder(view)
+        return CharacterViewHolder(view, parent.context)
     }
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
