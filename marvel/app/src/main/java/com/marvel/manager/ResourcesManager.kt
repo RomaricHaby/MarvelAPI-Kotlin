@@ -1,8 +1,6 @@
 package com.marvel.manager
 
-import android.content.res.Resources
 import com.marvel.BuildConfig
-import com.marvel.R
 import java.io.File
 
 object ResourcesManager {

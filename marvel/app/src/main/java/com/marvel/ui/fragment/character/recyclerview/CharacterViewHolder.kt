@@ -5,13 +5,20 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.marvel.R
+import com.marvel.modele.characters.Hero
 
-class CharacterViewHolder(itemView: View, context: Context) : RecyclerView.ViewHolder(itemView) {
+class CharacterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    private lateinit var lastPosition: TextView
-    private lateinit var  fav: ImageView
 
-    fun updateCharacter(character: Char) {
+    private var  characterImage: ImageView = itemView.findViewById<ImageView>(R.id.viewHolderCharacter)
 
+
+    fun updateCharacter(character: Hero)  {
+        val nameCharacter: TextView = itemView.findViewById(R.id.viewHolderNameCharacter)
+
+        nameCharacter.text = "test"
+        nameCharacter.text = character.name
     }
 }
+
