@@ -11,7 +11,7 @@ import com.marvel.modele.characters.Hero
 import com.marvel.modele.comics.Comics
 import com.squareup.picasso.Picasso
 
-class ComicsDetailActivity(private val character: Comics, private val context: Context) : AppCompatActivity() {
+class ComicsDetailActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
