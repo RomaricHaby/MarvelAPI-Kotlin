@@ -17,6 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
+
 class CharacterFragment : Fragment(), CoroutineScope by MainScope() {
     private lateinit var recyclerView: RecyclerView
 
@@ -44,7 +45,7 @@ class CharacterFragment : Fragment(), CoroutineScope by MainScope() {
                 val data = character?.dataCharacter?.results
 
                 // This will pass the ArrayList to our Adapter
-                val adapter = CharacterAdapter(data)
+                val adapter = context?.let { CharacterAdapter(data, it) }
 
                 // Setting the Adapter with the recyclerview
                 recyclerView.adapter = adapter

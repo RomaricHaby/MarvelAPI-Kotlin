@@ -2,6 +2,8 @@ package com.marvel.modele.characters
 
 import com.google.gson.annotations.SerializedName
 import com.marvel.modele.common.Thumbnail
+import java.io.Serializable
+
 
 data class Hero(
     @SerializedName("id") val id: Int,
@@ -14,4 +16,4 @@ data class Hero(
     @SerializedName("series") val series: ExtraDataCharacter,
     @SerializedName("stories") val stories: ExtraDataCharacter,
     @SerializedName("events") val events: ExtraDataCharacter
-)
+) : Serializable
