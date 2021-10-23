@@ -1,5 +1,6 @@
 package com.marvel.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -106,5 +107,12 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
                 ).show()
             }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        val intent = Intent(this,MainActivity::class.java)
+        startActivity(intent)
     }
 }
