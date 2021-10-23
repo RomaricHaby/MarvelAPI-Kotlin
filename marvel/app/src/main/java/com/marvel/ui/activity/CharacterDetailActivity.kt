@@ -12,8 +12,10 @@ import com.marvel.R
 import com.marvel.modele.characters.Hero
 import com.marvel.ui.fragment.comics.recyclerview.ComicsAdapter
 import com.marvel.ui.series.SeriesAdapter
+import com.marvel.ui.stories.StoriesAdapter
 import com.marvel.usecase.character.GetCharacterComicsUseCase
 import com.marvel.usecase.character.GetCharacterSeriesUseCase
+import com.marvel.usecase.character.GetCharacterStoriesUseCase
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,8 +25,10 @@ import kotlinx.coroutines.launch
 class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() {
     private lateinit var imageCharacter: ImageView
     private lateinit var nameCharacter: TextView
+
     private lateinit var recyclerViewComics: RecyclerView
     private lateinit var recyclerViewSeries: RecyclerView
+    private lateinit var recyclerViewStories: RecyclerView
 
 
     private lateinit var character: Hero
@@ -33,6 +37,7 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_character_detail)
+
         unitUI()
 
         character = intent.getSerializableExtra("character") as Hero
@@ -40,14 +45,18 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
         setImageCharacter()
         nameCharacter.text = character.name
 
-        setRecyclerViewComics()
-        setRecyclerViewSeries()
+        setRecyclerView(recyclerViewComics, "comics")
+        setRecyclerView(recyclerViewSeries, "series")
+        setRecyclerView(recyclerViewStories, "stories")
+
     }
 
 
     private fun unitUI() {
         recyclerViewSeries = findViewById(R.id.recyclerViewSeriesCharacterDetail)
         recyclerViewComics = findViewById(R.id.recyclerViewComicsCharacterDetail)
+        recyclerViewStories = findViewById(R.id.recyclerViewStoriesCharacterDetail)
+
         imageCharacter = findViewById(R.id.CharacterDetailImage)
         nameCharacter = findViewById(R.id.CharacterDetailName)
     }
@@ -61,48 +70,34 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
             .into(imageCharacter)
     }
 
-    private fun setRecyclerViewComics() {
+    private fun setRecyclerView(recyclerView: RecyclerView, type: String) {
         // this creates a vertical layout Manager
-        recyclerViewComics.layoutManager = LinearLayoutManager(this@CharacterDetailActivity)
+        recyclerView.layoutManager = LinearLayoutManager(this@CharacterDetailActivity)
 
         launch(Dispatchers.Main) {
             try {
                 val id = character.id
-                val comics = GetCharacterComicsUseCase(id.toString()).execute().getOrThrow()
-                val data = comics?.data?.results
 
-                // This will pass the ArrayList to our Adapter
-                val adapter = ComicsAdapter(data)
-
-                // Setting the Adapter with the recyclerview
-                recyclerViewComics.adapter = adapter
-
-            } catch (e: Exception) {
-                Toast.makeText(
-                    this@CharacterDetailActivity,
-                    "Error Occurred: ${e.message}",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-        }
-    }
-
-    private fun setRecyclerViewSeries() {
-        // this creates a vertical layout Manager
-        recyclerViewSeries.layoutManager = LinearLayoutManager(this@CharacterDetailActivity)
-
-        launch(Dispatchers.Main) {
-            try {
-                val id = character.id
-                val comics = GetCharacterSeriesUseCase(id.toString()).execute().getOrThrow()
-                val data = comics?.data?.results
-
-                // This will pass the ArrayList to our Adapter
-                val adapter = SeriesAdapter(data)
-
-                // Setting the Adapter with the recyclerview
-                recyclerViewSeries.adapter = adapter
-
+                when (type) {
+                    "comics" -> {
+                        val responseAPi = GetCharacterComicsUseCase(id.toString()).execute().getOrThrow()
+                        val data = responseAPi?.data?.results
+                        val adapter = ComicsAdapter(data)
+                        recyclerView.adapter = adapter
+                    }
+                    "series" ->{
+                        val responseAPi = GetCharacterSeriesUseCase(id.toString()).execute().getOrThrow()
+                        val data = responseAPi?.data?.results
+                        val adapter = SeriesAdapter(data)
+                        recyclerView.adapter = adapter
+                    }
+                    "stories" ->{
+                        val responseAPi = GetCharacterStoriesUseCase(id.toString()).execute().getOrThrow()
+                        val data = responseAPi?.data?.results
+                        val adapter = StoriesAdapter(data)
+                        recyclerView.adapter = adapter
+                    }
+                }
             } catch (e: Exception) {
                 Toast.makeText(
                     this@CharacterDetailActivity,

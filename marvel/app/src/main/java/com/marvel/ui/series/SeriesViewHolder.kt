@@ -11,9 +11,9 @@ class SeriesViewHolder(itemView: View, private val context: Context) : RecyclerV
 
     fun updateSeries(series: Series) {
 
-        val nameSerie: TextView = itemView.findViewById(R.id.viewHolderNameSeries)
+        val nameSeries: TextView = itemView.findViewById(R.id.viewHolderNameSeries)
 
-        nameSerie.text = series.title
+        nameSeries.text = series.title
 
     }
 }
