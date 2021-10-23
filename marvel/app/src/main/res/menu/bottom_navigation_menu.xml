@@ -16,9 +16,4 @@
         android:enabled="true"
         android:icon="@drawable/ic_favorite"
         android:title="@string/bottom_navigation_menu_fav" />
-    <item
-        android:id="@+id/action_qrcode"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_qr_code_scanner_24"
-        android:title="@string/bottom_navigation_menu_qrcode" />
 </menu>

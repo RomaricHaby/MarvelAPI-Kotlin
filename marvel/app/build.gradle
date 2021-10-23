@@ -45,6 +45,7 @@ android {
 dependencies {
     // Add this line for the QR code Scanner
     implementation "com.journeyapps:zxing-android-embedded:3.6.0"
+    implementation 'com.budiyev.android:code-scanner:2.1.0'
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2-native-mt"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'

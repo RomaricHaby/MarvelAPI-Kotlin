@@ -2,7 +2,7 @@ package com.marvel.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -11,15 +11,11 @@ import com.marvel.manager.ResourcesManager
 import com.marvel.ui.fragment.character.CharacterFragment
 import com.marvel.ui.fragment.comics.ComicsFragment
 import com.marvel.ui.fragment.favoris.FavorisFragment
-import com.marvel.usecase.comics.GetComicsUseCase
-import com.marvel.usecase.creators.GetAllCreatorsUseCase
-import com.marvel.usecase.events.GetAllEventsUseCase
-import com.marvel.usecase.series.GetAllSeriesUseCase
-import com.marvel.usecase.stories.GetAllStories
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
     private lateinit var navigation: BottomNavigationView
+    private lateinit var buttonQRCode : ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +37,19 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
           }*/
     }
 
+    private fun buttonQRCode(){
+        buttonQRCode.setOnClickListener {
+            val intent = Intent(this, ScanQRCodeActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
     private fun unitUI() {
         navigation = findViewById(R.id.bottom_nav_bar)
+        buttonQRCode = findViewById(R.id.action_qrcode)
+
         initBottomNavBar()
+        buttonQRCode()
     }
 
     private fun initBottomNavBar() {
@@ -57,12 +63,6 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                 R.id.action_character -> loadFragment(CharacterFragment())
 
                 R.id.action_fav -> loadFragment(FavorisFragment())
-
-                R.id.action_qrcode -> {
-                    val intent = Intent(this, ScanQRCodeActivity::class.java)
-                    startActivity(intent)
-                }
-
             }
             return@setOnItemSelectedListener true
         }

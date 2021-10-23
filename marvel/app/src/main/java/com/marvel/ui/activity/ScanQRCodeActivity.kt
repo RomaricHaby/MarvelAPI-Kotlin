@@ -1,73 +1,125 @@
 package com.marvel.ui.activity
 
-import android.app.Activity
+import android.Manifest
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
-import com.google.zxing.integration.android.IntentIntegrator
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import com.budiyev.android.codescanner.*
 import com.marvel.R
-import com.marvel.ui.fragment.comics.recyclerview.ComicsAdapter
-import com.marvel.ui.series.SeriesAdapter
-import com.marvel.ui.stories.StoriesAdapter
-import com.marvel.usecase.character.GetCharacterComicsUseCase
-import com.marvel.usecase.character.GetCharacterSeriesUseCase
-import com.marvel.usecase.character.GetCharacterStoriesUseCase
 import com.marvel.usecase.character.GetCharacterUseCase
-import kotlinx.coroutines.*
+import kotlinx.coroutines.runBlocking
 
 class ScanQRCodeActivity : AppCompatActivity() {
-    private lateinit var mQrResultLauncher : ActivityResultLauncher<Intent>
+    private lateinit var codeScanner: CodeScanner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(com.marvel.R.layout.activity_scan_qrcode)
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_DENIED
+        ) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 123)
+        } else {
+            startScanning()
+        }
+    }
 
-        // Alternative to "onActivityResult", because that is "deprecated"
-        mQrResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            if(it.resultCode == Activity.RESULT_OK) {
-                val result = IntentIntegrator.parseActivityResult(it.resultCode, it.data)
+    private fun startScanning() {
+        // Parameters (default values)
+        val scannerView: CodeScannerView = findViewById(R.id.scanner_view)
+        codeScanner = CodeScanner(this, scannerView)
+        codeScanner.camera = CodeScanner.CAMERA_BACK // or CAMERA_FRONT or specific camera id
+        codeScanner.formats = CodeScanner.ALL_FORMATS // list of type BarcodeFormat,
+        // ex. listOf(BarcodeFormat.QR_CODE)
+        codeScanner.autoFocusMode = AutoFocusMode.SAFE // or CONTINUOUS
+        codeScanner.scanMode = ScanMode.SINGLE // or CONTINUOUS or PREVIEW
+        codeScanner.isAutoFocusEnabled = true // Whether to enable auto focus or not
+        codeScanner.isFlashEnabled = false // Whether to enable flash or not
 
-                if(result.contents != null) {
-                    val intent = Intent(this, CharacterDetailActivity::class.java)
+        // Callbacks
+        codeScanner.decodeCallback = DecodeCallback {
+            runOnUiThread {
+                val intent = Intent(this, CharacterDetailActivity::class.java)
 
-                    val response = runBlocking { GetCharacterUseCase(result.contents).execute().getOrThrow() }
+                val response = runBlocking { GetCharacterUseCase(it.text).execute().getOrThrow() }
 
-                    intent.putExtra("character", response?.dataCharacter?.results?.get(0))
-                    this.startActivity(intent)
+                intent.putExtra("character", response?.dataCharacter?.results?.get(0))
+                this.startActivity(intent)
 
-
-                // Toast.makeText(this, result.contents, Toast.LENGTH_LONG).show()
-                }
+            }
+        }
+        codeScanner.errorCallback = ErrorCallback { // or ErrorCallback.SUPPRESS
+            runOnUiThread {
+                Toast.makeText(
+                    this,
+                    "Camera initialization error: ${it.message}",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
 
-        // Starts scanner on Create of Overlay (you can also call this function using a button click)
-        startScanner()
+        scannerView.setOnClickListener {
+            codeScanner.startPreview()
+        }
     }
 
-
-    // Start the QR Scanner
-    private fun startScanner() {
-        val scanner = IntentIntegrator(this)
-        // QR Code Format
-        scanner.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
-        // Set Text Prompt at Bottom of QR code Scanner Activity
-        scanner.setPrompt("Scanner le Qr Code d'un héro")
-
-        scanner.setOrientationLocked(true)
-
-        // Start Scanner (don't use initiateScan() unless if you want to use OnActivityResult)
-        mQrResultLauncher.launch(scanner.createScanIntent())
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 123) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Camera permission granted", Toast.LENGTH_LONG).show()
+                startScanning()
+            } else {
+                Toast.makeText(this, "Camera permission denied", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
-//TODO check si sa passe
-    override fun onBackPressed() {
-        super.onBackPressed()
+    override fun onResume() {
+        super.onResume()
+        if (::codeScanner.isInitialized) {
+            codeScanner.startPreview()
+        }
+    }
 
-        val intent = Intent(this,MainActivity::class.java)
-        startActivity(intent)
+    override fun onPause() {
+        if (::codeScanner.isInitialized) {
+            codeScanner.releaseResources()
+        }
+        super.onPause()
     }
 }
+
+
+   /* private lateinit var mQrResultLauncher: ActivityResultLauncher<Intent>
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(com.marvel.R.layout.activity_scan_qrcode)
+
+
+
+    }*/
+
+
+
+    /*try {
+           val barcodeEncoder = BarcodeEncoder()
+           val bitmap = barcodeEncoder.encodeBitmap("1009368", BarcodeFormat.QR_CODE, 400, 400)
+           val imageViewQrCode = findViewById<View>(com.marvel.R.id.qrCode) as ImageView
+           imageViewQrCode.setImageBitmap(bitmap)
+
+       } catch (e: Exception) {
+       }*/
+
+    //setUPForScan()
