@@ -11,7 +11,9 @@ import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
 import com.marvel.modele.characters.Hero
 import com.marvel.ui.fragment.comics.recyclerview.ComicsAdapter
+import com.marvel.ui.series.SeriesAdapter
 import com.marvel.usecase.character.GetCharacterComicsUseCase
+import com.marvel.usecase.character.GetCharacterSeriesUseCase
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -22,6 +24,7 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
     private lateinit var imageCharacter: ImageView
     private lateinit var nameCharacter: TextView
     private lateinit var recyclerViewComics: RecyclerView
+    private lateinit var recyclerViewSeries: RecyclerView
 
 
     private lateinit var character: Hero
@@ -36,11 +39,14 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
 
         setImageCharacter()
         nameCharacter.text = character.name
+
         setRecyclerViewComics()
+        setRecyclerViewSeries()
     }
 
 
     private fun unitUI() {
+        recyclerViewSeries = findViewById(R.id.recyclerViewSeriesCharacterDetail)
         recyclerViewComics = findViewById(R.id.recyclerViewComicsCharacterDetail)
         imageCharacter = findViewById(R.id.CharacterDetailImage)
         nameCharacter = findViewById(R.id.CharacterDetailName)
@@ -56,13 +62,11 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
     }
 
     private fun setRecyclerViewComics() {
-
         // this creates a vertical layout Manager
         recyclerViewComics.layoutManager = LinearLayoutManager(this@CharacterDetailActivity)
 
         launch(Dispatchers.Main) {
             try {
-
                 val id = character.id
                 val comics = GetCharacterComicsUseCase(id.toString()).execute().getOrThrow()
                 val data = comics?.data?.results
@@ -81,6 +85,31 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
                 ).show()
             }
         }
+    }
 
+    private fun setRecyclerViewSeries() {
+        // this creates a vertical layout Manager
+        recyclerViewSeries.layoutManager = LinearLayoutManager(this@CharacterDetailActivity)
+
+        launch(Dispatchers.Main) {
+            try {
+                val id = character.id
+                val comics = GetCharacterSeriesUseCase(id.toString()).execute().getOrThrow()
+                val data = comics?.data?.results
+
+                // This will pass the ArrayList to our Adapter
+                val adapter = SeriesAdapter(data)
+
+                // Setting the Adapter with the recyclerview
+                recyclerViewSeries.adapter = adapter
+
+            } catch (e: Exception) {
+                Toast.makeText(
+                    this@CharacterDetailActivity,
+                    "Error Occurred: ${e.message}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
     }
 }

@@ -26,6 +26,11 @@ interface ApiServiceMarvel {
         @Path("id") id: String,
     ): Response<ResponseComicsAPI>
 
+    @GET("/v1/public/characters/{id}/series")
+    suspend fun getCharacterSeries(
+        @Path("id") id: String,
+    ): Response<ResponseSeriesAPI>
+
 
     //Comics
     @GET("/v1/public/comics/{id}")
