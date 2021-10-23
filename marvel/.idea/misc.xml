@@ -16,6 +16,7 @@
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/toolbar.xml" value="0.5" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/view_holder_character.xml" value="0.5" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/view_holder_comics.xml" value="0.5" />
+        <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/view_holder_creator.xml" value="0.36666666666666664" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/view_holder_series.xml" value="0.24909420289855072" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/view_holder_stories.xml" value="0.24909420289855072" />
         <entry key="app/src/main/res/drawable/ic_favorite.xml" value="0.20260416666666667" />

@@ -18,12 +18,8 @@ class ScanQRCodeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.marvel.R.layout.activity_scan_qrcode)
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.CAMERA
-            ) == PackageManager.PERMISSION_DENIED
-        ) {
+        setContentView(R.layout.activity_scan_qrcode)
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 123)
         } else {
             startScanning()
@@ -31,18 +27,16 @@ class ScanQRCodeActivity : AppCompatActivity() {
     }
 
     private fun startScanning() {
-        // Parameters (default values)
         val scannerView: CodeScannerView = findViewById(R.id.scanner_view)
         codeScanner = CodeScanner(this, scannerView)
-        codeScanner.camera = CodeScanner.CAMERA_BACK // or CAMERA_FRONT or specific camera id
-        codeScanner.formats = CodeScanner.ALL_FORMATS // list of type BarcodeFormat,
-        // ex. listOf(BarcodeFormat.QR_CODE)
-        codeScanner.autoFocusMode = AutoFocusMode.SAFE // or CONTINUOUS
-        codeScanner.scanMode = ScanMode.SINGLE // or CONTINUOUS or PREVIEW
-        codeScanner.isAutoFocusEnabled = true // Whether to enable auto focus or not
-        codeScanner.isFlashEnabled = false // Whether to enable flash or not
+        codeScanner.camera = CodeScanner.CAMERA_BACK
+        codeScanner.formats = CodeScanner.ALL_FORMATS
 
-        // Callbacks
+        codeScanner.autoFocusMode = AutoFocusMode.SAFE
+        codeScanner.scanMode = ScanMode.SINGLE
+        codeScanner.isAutoFocusEnabled = true
+        codeScanner.isFlashEnabled = false
+
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
                 val intent = Intent(this, CharacterDetailActivity::class.java)
@@ -51,10 +45,10 @@ class ScanQRCodeActivity : AppCompatActivity() {
 
                 intent.putExtra("character", response?.dataCharacter?.results?.get(0))
                 this.startActivity(intent)
-
             }
         }
-        codeScanner.errorCallback = ErrorCallback { // or ErrorCallback.SUPPRESS
+
+        codeScanner.errorCallback = ErrorCallback {
             runOnUiThread {
                 Toast.makeText(
                     this,
@@ -69,11 +63,7 @@ class ScanQRCodeActivity : AppCompatActivity() {
         }
     }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 123) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -101,25 +91,24 @@ class ScanQRCodeActivity : AppCompatActivity() {
 }
 
 
-   /* private lateinit var mQrResultLauncher: ActivityResultLauncher<Intent>
+/* private lateinit var mQrResultLauncher: ActivityResultLauncher<Intent>
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(com.marvel.R.layout.activity_scan_qrcode)
-
-
-
-    }*/
+ override fun onCreate(savedInstanceState: Bundle?) {
+     super.onCreate(savedInstanceState)
+     setContentView(com.marvel.R.layout.activity_scan_qrcode)
 
 
 
-    /*try {
-           val barcodeEncoder = BarcodeEncoder()
-           val bitmap = barcodeEncoder.encodeBitmap("1009368", BarcodeFormat.QR_CODE, 400, 400)
-           val imageViewQrCode = findViewById<View>(com.marvel.R.id.qrCode) as ImageView
-           imageViewQrCode.setImageBitmap(bitmap)
+ }*/
 
-       } catch (e: Exception) {
-       }*/
 
-    //setUPForScan()
+/*try {
+       val barcodeEncoder = BarcodeEncoder()
+       val bitmap = barcodeEncoder.encodeBitmap("1009368", BarcodeFormat.QR_CODE, 400, 400)
+       val imageViewQrCode = findViewById<View>(com.marvel.R.id.qrCode) as ImageView
+       imageViewQrCode.setImageBitmap(bitmap)
+
+   } catch (e: Exception) {
+   }*/
+
+//setUPForScan()
