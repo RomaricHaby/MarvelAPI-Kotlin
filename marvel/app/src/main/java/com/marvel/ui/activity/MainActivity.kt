@@ -1,6 +1,7 @@
 package com.marvel.ui.activity
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -9,6 +10,9 @@ import com.marvel.manager.ResourcesManager
 import com.marvel.ui.fragment.character.CharacterFragment
 import com.marvel.ui.fragment.comics.ComicsFragment
 import com.marvel.ui.fragment.favoris.FavorisFragment
+import com.marvel.usecase.comics.GetComicsUseCase
+import com.marvel.usecase.creators.GetAllCreatorsUseCase
+import com.marvel.usecase.series.GetAllSeriesUseCase
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
@@ -24,14 +28,14 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
         loadFragment(CharacterFragment())
 
-        /*  launch(Dispatchers.Main) {
+        launch(Dispatchers.Main) {
               try {
-                  val ironMan = GetCharacterUseCase("1009368").execute().getOrThrow()
-                  Toast.makeText(this@MainActivity, ironMan?.dataCharacter?.results?.get(0)?.name, Toast.LENGTH_LONG).show()
+                  val response = GetAllCreatorsUseCase().execute().getOrThrow()
+                  Toast.makeText(this@MainActivity, response?.data?.results?.get(0)?.fullName, Toast.LENGTH_LONG).show()
               } catch (e: Exception) {
                   Toast.makeText(this@MainActivity, "Error Occurred: ${e.message}", Toast.LENGTH_LONG).show()
               }
-          }*/
+          }
     }
 
     private fun unitUI() {

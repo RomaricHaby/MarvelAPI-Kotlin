@@ -1,13 +1,14 @@
-package com.marvel.usecase.comics
+package com.marvel.usecase.series
 
 import com.marvel.modele.comics.ResponseComicsAPI
+import com.marvel.modele.series.ResponseSeriesAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 
-class GetAllComicsUseCase: UseCase<ResponseComicsAPI?> {
-    override suspend fun execute(): Result<ResponseComicsAPI?> {
+class GetAllSeriesUseCase : UseCase<ResponseSeriesAPI?> {
+    override suspend fun execute(): Result<ResponseSeriesAPI?> {
         return try {
-            val response = ApiClientMarvel.apiServiceMarvel.getAllComics()
+            val response = ApiClientMarvel.apiServiceMarvel.getAllSeries()
 
             if (response.isSuccessful && response.body() != null) {
                 return Result.success(response.body())
@@ -17,5 +18,6 @@ class GetAllComicsUseCase: UseCase<ResponseComicsAPI?> {
         } catch (t: Throwable) {
             Result.failure(t)
         }
+
     }
 }

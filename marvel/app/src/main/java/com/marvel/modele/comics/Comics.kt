@@ -1,8 +1,8 @@
 package com.marvel.modele.comics
 
 import com.google.gson.annotations.SerializedName
-import com.marvel.modele.comics.uri.CollectionURIComics
-import com.marvel.modele.comics.uri.ResourcesURI
+import com.marvel.modele.common.uri.CollectionURIComics
+import com.marvel.modele.common.uri.ResourcesURI
 import com.marvel.modele.common.Thumbnail
 import com.marvel.modele.comics.type.TypeDateAPI
 import com.marvel.modele.comics.type.TypeLanguage

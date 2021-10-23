@@ -1,4 +1,4 @@
-package com.marvel.modele.comics.uri
+package com.marvel.modele.common.uri
 
 import com.google.gson.annotations.SerializedName
 

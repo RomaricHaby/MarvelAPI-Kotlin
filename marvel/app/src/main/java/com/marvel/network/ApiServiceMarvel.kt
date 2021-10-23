@@ -2,6 +2,8 @@ package com.marvel.network
 
 import com.marvel.modele.characters.ResponseCharacterAPI
 import com.marvel.modele.comics.ResponseComicsAPI
+import com.marvel.modele.creators.ResponseCreatorsAPI
+import com.marvel.modele.series.ResponseSeriesAPI
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -31,5 +33,14 @@ interface ApiServiceMarvel {
 
     @GET("/v1/public/comics")
     suspend fun getAllComics(): Response<ResponseComicsAPI>
+
+    //Series
+    @GET("/v1/public/series")
+    suspend fun getAllSeries(): Response<ResponseSeriesAPI>
+
+    //Creators
+    @GET("/v1/public/creators")
+    suspend fun getAllCreators(): Response<ResponseCreatorsAPI>
+
 
 }
