@@ -8,6 +8,7 @@ import com.marvel.modele.comics.type.TypeDateAPI
 import com.marvel.modele.comics.type.TypeLanguage
 import com.marvel.modele.comics.type.TypePrice
 import com.marvel.modele.comics.type.TypeURL
+import java.io.Serializable
 
 
 data class Comics(
@@ -40,4 +41,4 @@ data class Comics(
     @SerializedName("characters") val characters: CollectionURIComics,
     @SerializedName("stories") val stories: CollectionURIComics,
     @SerializedName("events") val events: CollectionURIComics
-)
+) : Serializable

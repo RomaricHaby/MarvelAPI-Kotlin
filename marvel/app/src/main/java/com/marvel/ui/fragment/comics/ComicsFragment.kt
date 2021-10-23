@@ -46,7 +46,7 @@ class ComicsFragment : Fragment(), CoroutineScope by MainScope() {
                 val data = comics?.data?.results
 
                 // This will pass the ArrayList to our Adapter
-                val adapter = ComicsAdapter(data)
+                val adapter = context?.let { ComicsAdapter(data, it) }
 
                 // Setting the Adapter with the recyclerview
                 recyclerView.adapter = adapter

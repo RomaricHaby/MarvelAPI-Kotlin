@@ -82,7 +82,7 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
                     "comics" -> {
                         val responseAPi = GetCharacterComicsUseCase(id.toString()).execute().getOrThrow()
                         val data = responseAPi?.data?.results
-                        val adapter = ComicsAdapter(data)
+                        val adapter = ComicsAdapter(data, this@CharacterDetailActivity)
                         recyclerView.adapter = adapter
                     }
                     "series" ->{
