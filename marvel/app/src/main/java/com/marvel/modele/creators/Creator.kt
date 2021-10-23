@@ -6,8 +6,9 @@ import com.marvel.modele.common.SimpleComics
 import com.marvel.modele.common.SimpleEvents
 import com.marvel.modele.common.SimpleSeries
 import com.marvel.modele.common.Thumbnail
+import java.io.Serializable
 
-data class Creators(
+data class Creator(
     @SerializedName("id") val id : Int,
     @SerializedName("firstName") val firstName : String,
     @SerializedName("middleName") val middleName : String,
@@ -22,4 +23,4 @@ data class Creators(
     @SerializedName("stories") val stories : SimpleComics,
     @SerializedName("events") val events : SimpleEvents,
     @SerializedName("urls") val urls : List<TypeURL>
-)
+) : Serializable

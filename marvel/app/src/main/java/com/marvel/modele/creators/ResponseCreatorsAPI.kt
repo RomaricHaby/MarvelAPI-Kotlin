@@ -1,6 +1,7 @@
 package com.marvel.modele.creators
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ResponseCreatorsAPI(
     @SerializedName("code") val code : Int,
@@ -9,5 +10,5 @@ data class ResponseCreatorsAPI(
     @SerializedName("attributionText") val attributionText : String,
     @SerializedName("attributionHTML") val attributionHTML : String,
     @SerializedName("etag") val etag : String,
-    @SerializedName("data") val data : DataCreators
-)
+    @SerializedName("data") val data : DataCreator
+) : Serializable

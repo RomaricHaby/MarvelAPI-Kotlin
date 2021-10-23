@@ -89,7 +89,7 @@ class ComicsDetailActivity: AppCompatActivity(), CoroutineScope by MainScope() {
                             noCreator.visibility = VISIBLE
                         }
 
-                        val adapter = CreatorAdapter(data)
+                        val adapter = CreatorAdapter(data, this@ComicsDetailActivity)
                         recyclerView.adapter = adapter
                     }
                 }

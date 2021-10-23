@@ -5,16 +5,15 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.modele.creators.Creators
+import com.marvel.modele.creators.Creator
 
 
 class CreatorViewHolder(itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView) {
 
-    fun updateCreator(creators: Creators) {
+    fun updateCreator(creator: Creator) {
 
         val nameCreators: TextView = itemView.findViewById(R.id.viewHolderNameCreator)
 
-        nameCreators.text = creators.fullName
-
+        nameCreators.text = creator.fullName
     }
 }
