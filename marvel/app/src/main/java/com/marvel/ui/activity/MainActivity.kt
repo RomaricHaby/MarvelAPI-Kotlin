@@ -1,5 +1,6 @@
 package com.marvel.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -56,6 +57,11 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                 R.id.action_character -> loadFragment(CharacterFragment())
 
                 R.id.action_fav -> loadFragment(FavorisFragment())
+
+                R.id.action_qrcode -> {
+                    val intent = Intent(this, ScanQRCodeActivity::class.java)
+                    startActivity(intent)
+                }
 
             }
             return@setOnItemSelectedListener true
