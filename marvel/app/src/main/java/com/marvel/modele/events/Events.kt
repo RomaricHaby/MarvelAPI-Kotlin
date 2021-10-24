@@ -1,7 +1,7 @@
 package com.marvel.modele.events
 
 import com.google.gson.annotations.SerializedName
-import com.marvel.modele.comics.type.TypeURL
+import com.marvel.modele.common.type.TypeURL
 import com.marvel.modele.common.*
 import com.marvel.modele.common.uri.ResourcesURI
 

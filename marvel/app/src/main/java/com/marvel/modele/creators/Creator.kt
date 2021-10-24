@@ -1,7 +1,7 @@
 package com.marvel.modele.creators
 
 import com.google.gson.annotations.SerializedName
-import com.marvel.modele.comics.type.TypeURL
+import com.marvel.modele.common.type.TypeURL
 import com.marvel.modele.common.SimpleComics
 import com.marvel.modele.common.SimpleEvents
 import com.marvel.modele.common.SimpleSeries

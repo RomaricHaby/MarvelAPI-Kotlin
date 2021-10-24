@@ -1,9 +1,9 @@
-package com.marvel.modele.comics.type
+package com.marvel.modele.common.type
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class TypePrice(
+data class TypeDateAPI(
     @SerializedName("type") val type: String,
-    @SerializedName("price") val price: Float,
+    @SerializedName("date") val date: String,
 ): Serializable

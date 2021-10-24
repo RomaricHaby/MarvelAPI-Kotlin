@@ -4,10 +4,10 @@ import com.google.gson.annotations.SerializedName
 import com.marvel.modele.common.uri.CollectionURIComics
 import com.marvel.modele.common.uri.ResourcesURI
 import com.marvel.modele.common.Thumbnail
-import com.marvel.modele.comics.type.TypeDateAPI
-import com.marvel.modele.comics.type.TypeLanguage
-import com.marvel.modele.comics.type.TypePrice
-import com.marvel.modele.comics.type.TypeURL
+import com.marvel.modele.common.type.TypeDateAPI
+import com.marvel.modele.common.type.TypeLanguage
+import com.marvel.modele.common.type.TypePrice
+import com.marvel.modele.common.type.TypeURL
 import java.io.Serializable
 
 

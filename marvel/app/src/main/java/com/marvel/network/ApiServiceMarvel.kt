@@ -9,16 +9,21 @@ import com.marvel.modele.stories.ResponseStoriesAPI
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiServiceMarvel {
 
-    //Characters
     @GET("/v1/public/characters")
     suspend fun getAllCharacter(): Response<ResponseCharacterAPI>
 
     @GET("/v1/public/characters/{id}")
     suspend fun getCharacter(
         @Path("id") id: String,
+    ): Response<ResponseCharacterAPI>
+
+    @GET("/v1/public/characters")
+    suspend fun getCharacterWhitName(
+        @Query("nameStartsWith") nameStartsWith: String,
     ): Response<ResponseCharacterAPI>
 
     @GET("/v1/public/characters/{id}/comics")

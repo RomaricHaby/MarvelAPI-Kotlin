@@ -1,4 +1,4 @@
-package com.marvel.modele.comics.type
+package com.marvel.modele.common.type
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
