@@ -86,22 +86,19 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
 
                 when (type) {
                     COMICS -> {
-                        val responseAPi =
-                            GetCharacterComicsUseCase(id.toString()).execute().getOrThrow()
+                        val responseAPi = GetCharacterComicsUseCase(id.toString()).execute().getOrThrow()
                         val data = responseAPi?.data?.results
                         val adapter = ComicsAdapter(data, this@CharacterDetailActivity)
                         recyclerView.adapter = adapter
                     }
                     SERIES -> {
-                        val responseAPi =
-                            GetCharacterSeriesUseCase(id.toString()).execute().getOrThrow()
+                        val responseAPi = GetCharacterSeriesUseCase(id.toString()).execute().getOrThrow()
                         val data = responseAPi?.data?.results
                         val adapter = SeriesAdapter(data)
                         recyclerView.adapter = adapter
                     }
                     STORIES -> {
-                        val responseAPi =
-                            GetCharacterStoriesUseCase(id.toString()).execute().getOrThrow()
+                        val responseAPi = GetCharacterStoriesUseCase(id.toString()).execute().getOrThrow()
                         val data = responseAPi?.data?.results
                         val adapter = StoriesAdapter(data)
                         recyclerView.adapter = adapter

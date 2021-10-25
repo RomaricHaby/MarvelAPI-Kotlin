@@ -18,15 +18,16 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="306dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/logo_marvel"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/action_qrcode"
+        app:layout_constraintStart_toEndOf="@+id/action_fav"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_marvel_logo" />
 
     <ImageButton
@@ -37,8 +38,20 @@
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_qr_code_scanner_24"
         tools:ignore="RedundantDescriptionCheck" />
+
+    <ImageButton
+        android:id="@+id/action_fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/fav_button"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_favorite"
+        tools:ignore="SpeakableTextPresentCheck,RedundantDescriptionCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

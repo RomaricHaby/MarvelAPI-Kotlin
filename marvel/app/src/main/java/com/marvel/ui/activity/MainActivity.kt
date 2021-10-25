@@ -10,7 +10,7 @@ import com.marvel.R
 import com.marvel.manager.ResourcesManager
 import com.marvel.ui.fragment.character.CharacterFragment
 import com.marvel.ui.fragment.comics.ComicsFragment
-import com.marvel.ui.fragment.favoris.FavorisFragment
+import com.marvel.ui.fragment.event.EventFragment
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
                 R.id.action_character -> loadFragment(CharacterFragment())
 
-                R.id.action_fav -> loadFragment(FavorisFragment())
+                R.id.action_event -> loadFragment(EventFragment())
             }
             return@setOnItemSelectedListener true
         }

@@ -13,6 +13,7 @@ import retrofit2.http.Query
 
 interface ApiServiceMarvel {
 
+    //Characters
     @GET("/v1/public/characters")
     suspend fun getAllCharacter(): Response<ResponseCharacterAPI>
 
@@ -54,7 +55,7 @@ interface ApiServiceMarvel {
 
     @GET("/v1/public/comics")
     suspend fun getComicsByName(
-        @Query("titleStartsWith") nameStartsWith: String,
+        @Query("titleStartsWith") titleStartsWith: String,
     ): Response<ResponseComicsAPI>
 
     @GET("/v1/public/comics/{id}/creators")
@@ -73,6 +74,11 @@ interface ApiServiceMarvel {
     //Events
     @GET("/v1/public/events")
     suspend fun getAllEvents(): Response<ResponseEventsAPI>
+
+    @GET("/v1/public/events")
+    suspend fun getEventByName(
+        @Query("nameStartsWith") nameStartsWith: String,
+    ): Response<ResponseEventsAPI>
 
     //Stories
     @GET("/v1/public/stories")

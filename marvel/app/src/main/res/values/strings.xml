@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="bottom_navigation_menu_character">Characters</string>
-    <string name="bottom_navigation_menu_fav">Favorites</string>
+    <string name="bottom_navigation_menu_fav">Events</string>
     <string name="bottom_navigation_menu_comics">Comics</string>
     <string name="bottom_navigation_menu_qrcode" translatable="false">QR Code</string>
     <string name="logo_marvel">Logo marvel</string>
@@ -27,4 +27,5 @@
     <string name="cameraGranted">Camera permission granted</string>
     <string name="cameraNotGranted">Camera permission denied</string>
     <string name="cameraError">"Camera initialization error : "</string>
+    <string name="fav_button">fav button</string>
 </resources>

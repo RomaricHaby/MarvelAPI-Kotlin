@@ -28,7 +28,6 @@ class ComicsFragment : Fragment(), CoroutineScope by MainScope() {
         initUI(view)
         setRecyclerViewComics()
 
-        //TODO à tester
         setUpSearchComics()
 
         return view

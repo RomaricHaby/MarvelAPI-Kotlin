@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Marvel</string>
     <string name="bottom_navigation_menu_character">Personnages</string>
-    <string name="bottom_navigation_menu_fav">Favoris</string>
+    <string name="bottom_navigation_menu_fav">Événements</string>
     <string name="bottom_navigation_menu_comics">Comics</string>
     <string name="logo_marvel">Logo marvel</string>
     <string name="button_qr_code">button QR code</string>

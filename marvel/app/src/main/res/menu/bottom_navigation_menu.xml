@@ -12,8 +12,8 @@
         android:icon="@drawable/ic_character"
         android:title="@string/bottom_navigation_menu_character" />
     <item
-        android:id="@+id/action_fav"
+        android:id="@+id/action_event"
         android:enabled="true"
-        android:icon="@drawable/ic_favorite"
+        android:icon="@drawable/planner"
         android:title="@string/bottom_navigation_menu_fav" />
 </menu>

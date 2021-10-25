@@ -12,13 +12,15 @@
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/bottom_nav.xml" value="0.25" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/fragment_character.xml" value="0.33" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/fragment_comics.xml" value="0.36685773840541946" />
+        <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/fragment_event.xml" value="0.36666666666666664" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/fragment_favoris.xml" value="0.27717391304347827" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/shape_cel_recyclerview.xml" value="0.36666666666666664" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/test.xml" value="0.33" />
-        <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/toolbar.xml" value="0.25" />
+        <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/toolbar.xml" value="0.33" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/view_holder_character.xml" value="0.5" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/view_holder_comics.xml" value="0.5" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/view_holder_creator.xml" value="0.36666666666666664" />
+        <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/view_holder_event.xml" value="0.36666666666666664" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/view_holder_series.xml" value="0.33" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/layout/view_holder_stories.xml" value="0.24909420289855072" />
         <entry key="..\:/IEM/MarvelAPI-Kotlin/marvel/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.36666666666666664" />
