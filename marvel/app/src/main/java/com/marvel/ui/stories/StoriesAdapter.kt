@@ -4,9 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.modele.series.Series
-import com.marvel.modele.stories.Stories
-import com.marvel.ui.series.SeriesViewHolder
+import com.marvel.model.stories.Stories
 
 class StoriesAdapter (list: List<Stories>?) : RecyclerView.Adapter<StoriesViewHolder>() {
     private var storiesList: List<Stories>? = list

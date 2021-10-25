@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.modele.creators.Creator
+import com.marvel.model.creators.Creator
 import com.marvel.ui.activity.CreatorDetailActivity
 
 

@@ -52,11 +52,12 @@ class ScanQRCodeActivity : AppCompatActivity() {
             runOnUiThread {
                 Toast.makeText(
                     this,
-                    "Camera initialization error: ${it.message}",
+                    getString(R.string.cameraError) + it.message,
                     Toast.LENGTH_LONG
                 ).show()
             }
         }
+
 
         scannerView.setOnClickListener {
             codeScanner.startPreview()
@@ -67,10 +68,10 @@ class ScanQRCodeActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 123) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Camera permission granted", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.cameraGranted), Toast.LENGTH_LONG).show()
                 startScanning()
             } else {
-                Toast.makeText(this, "Camera permission denied", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.cameraNotGranted), Toast.LENGTH_LONG).show()
             }
         }
     }

@@ -13,8 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.ui.fragment.character.recyclerview.CharacterAdapter
 import com.marvel.usecase.character.GetAllCharacterUseCase
-import com.marvel.usecase.character.GetCharacterByName
-import com.marvel.usecase.character.GetCharacterUseCase
+import com.marvel.usecase.character.GetCharacterByNameUseCase
 import kotlinx.coroutines.*
 
 
@@ -24,7 +23,11 @@ class CharacterFragment : Fragment(), CoroutineScope by MainScope() {
     private lateinit var searchNameCharacter: EditText
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val view = inflater.inflate(R.layout.fragment_character, container, false)
 
         initUI(view)
@@ -37,8 +40,10 @@ class CharacterFragment : Fragment(), CoroutineScope by MainScope() {
 
     private fun setUpSearchCharacter() {
         searchButton.setOnClickListener {
-            if (searchNameCharacter.text.isNotEmpty()){
-                val character = runBlocking { GetCharacterByName(searchNameCharacter.text.toString()).execute().getOrThrow() }
+            if (searchNameCharacter.text.isNotEmpty()) {
+                val character = runBlocking {
+                    GetCharacterByNameUseCase(searchNameCharacter.text.toString()).execute().getOrThrow()
+                }
                 val data = character?.dataCharacter?.results
 
                 // This will pass the ArrayList to our Adapter
@@ -77,6 +82,4 @@ class CharacterFragment : Fragment(), CoroutineScope by MainScope() {
             }
         }
     }
-
-
 }

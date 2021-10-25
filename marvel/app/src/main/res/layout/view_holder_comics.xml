@@ -12,6 +12,7 @@
         android:id="@+id/viewHolderComicsIMG"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:contentDescription="@string/comics"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,11 +23,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="TextView"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/viewHolderComicsIMG"
-        app:layout_constraintTop_toTopOf="@+id/viewHolderComicsIMG" />
+        app:layout_constraintTop_toTopOf="@+id/viewHolderComicsIMG"
+        tools:text="Spider man tome 1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,30 @@
 <resources>
     <string name="app_name">Marvel</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="bottom_navigation_menu_character">Characters</string>
-    <string name="bottom_navigation_menu_fav">Favoris</string>
+    <string name="bottom_navigation_menu_fav">Favorites</string>
     <string name="bottom_navigation_menu_comics">Comics</string>
-    <string name="bottom_navigation_menu_qrcode">QR Code</string>
+    <string name="bottom_navigation_menu_qrcode" translatable="false">QR Code</string>
+    <string name="logo_marvel">Logo marvel</string>
+    <string name="button_qr_code">button QR code</string>
+    <string name="character_name">Character name</string>
+    <string name="search_button">search button</string>
+    <string name="stories">Stories</string>
+    <string name="series">Series</string>
+    <string name="comics">Comics</string>
+    <string name="iron_man" translatable="false">Iron Man</string>
+    <string name="character_image">character image</string>
+    <string name="no_description">No description given</string>
+    <string name="no_creator">No creators listed</string>
+    <string name="price">Price :</string>
+    <string name="numberOfPagesComics">Number of pages :</string>
+    <string name="comics_image">comics image</string>
+    <string name="creator">Creator</string>
+    <string name="creator_image">creator image</string>
+    <string name="comics_name">Comics name</string>
+
+    <string name="cameraGranted">Camera permission granted</string>
+    <string name="cameraNotGranted">Camera permission denied</string>
+    <string name="cameraError">"Camera initialization error : "</string>
 </resources>

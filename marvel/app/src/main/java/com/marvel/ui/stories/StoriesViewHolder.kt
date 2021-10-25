@@ -5,8 +5,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.modele.series.Series
-import com.marvel.modele.stories.Stories
+import com.marvel.model.stories.Stories
 
 class StoriesViewHolder (itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView) {
 

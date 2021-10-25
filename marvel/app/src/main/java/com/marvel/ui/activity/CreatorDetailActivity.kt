@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.modele.creators.Creator
+import com.marvel.model.creators.Creator
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope

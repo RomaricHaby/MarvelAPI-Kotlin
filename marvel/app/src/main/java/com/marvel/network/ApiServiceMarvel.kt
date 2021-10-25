@@ -1,11 +1,11 @@
 package com.marvel.network
 
-import com.marvel.modele.characters.ResponseCharacterAPI
-import com.marvel.modele.comics.ResponseComicsAPI
-import com.marvel.modele.creators.ResponseCreatorsAPI
-import com.marvel.modele.events.ResponseEventsAPI
-import com.marvel.modele.series.ResponseSeriesAPI
-import com.marvel.modele.stories.ResponseStoriesAPI
+import com.marvel.model.characters.ResponseCharacterAPI
+import com.marvel.model.comics.ResponseComicsAPI
+import com.marvel.model.creators.ResponseCreatorsAPI
+import com.marvel.model.events.ResponseEventsAPI
+import com.marvel.model.series.ResponseSeriesAPI
+import com.marvel.model.stories.ResponseStoriesAPI
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -22,7 +22,7 @@ interface ApiServiceMarvel {
     ): Response<ResponseCharacterAPI>
 
     @GET("/v1/public/characters")
-    suspend fun getCharacterWhitName(
+    suspend fun getCharacterByName(
         @Query("nameStartsWith") nameStartsWith: String,
     ): Response<ResponseCharacterAPI>
 
@@ -50,6 +50,12 @@ interface ApiServiceMarvel {
 
     @GET("/v1/public/comics")
     suspend fun getAllComics(): Response<ResponseComicsAPI>
+
+
+    @GET("/v1/public/comics")
+    suspend fun getComicsByName(
+        @Query("titleStartsWith") nameStartsWith: String,
+    ): Response<ResponseComicsAPI>
 
     @GET("/v1/public/comics/{id}/creators")
     suspend fun getComicsCreator(

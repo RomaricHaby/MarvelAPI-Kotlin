@@ -1,6 +1,6 @@
 package com.marvel.usecase.character
 
-import com.marvel.modele.characters.ResponseCharacterAPI
+import com.marvel.model.characters.ResponseCharacterAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 

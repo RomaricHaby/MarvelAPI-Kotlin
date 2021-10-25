@@ -7,8 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.modele.characters.Hero
-import com.marvel.modele.comics.Comics
+import com.marvel.model.comics.Comics
 import com.squareup.picasso.Picasso
 
 class ComicsViewHolder(itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView){

@@ -26,15 +26,6 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         ResourcesManager.loadKeyAPI()
 
         loadFragment(CharacterFragment())
-
-        /*launch(Dispatchers.Main) {
-              try {
-                  val response = GetAllStories().execute().getOrThrow()
-                  Toast.makeText(this@MainActivity, response?.data?.results?.get(1)?.type, Toast.LENGTH_LONG).show()
-              } catch (e: Exception) {
-                  Toast.makeText(this@MainActivity, "Error Occurred: ${e.message}", Toast.LENGTH_LONG).show()
-              }
-          }*/
     }
 
     private fun buttonQRCode(){

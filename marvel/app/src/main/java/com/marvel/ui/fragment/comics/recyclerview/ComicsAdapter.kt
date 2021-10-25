@@ -6,11 +6,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.modele.characters.Hero
-import com.marvel.modele.comics.Comics
-import com.marvel.ui.activity.CharacterDetailActivity
+import com.marvel.model.comics.Comics
 import com.marvel.ui.activity.ComicsDetailActivity
-import com.marvel.ui.fragment.character.recyclerview.CharacterViewHolder
 
 class ComicsAdapter (list: List<Comics>?, private val context: Context) : RecyclerView.Adapter<ComicsViewHolder>() {
     private var comicsList: List<Comics>? = list

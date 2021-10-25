@@ -1,7 +1,6 @@
 package com.marvel.usecase.events
 
-import com.marvel.modele.creators.ResponseCreatorsAPI
-import com.marvel.modele.events.ResponseEventsAPI
+import com.marvel.model.events.ResponseEventsAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 

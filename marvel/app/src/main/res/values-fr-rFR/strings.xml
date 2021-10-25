@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Marvel</string>
+    <string name="bottom_navigation_menu_character">Personnages</string>
+    <string name="bottom_navigation_menu_fav">Favoris</string>
+    <string name="bottom_navigation_menu_comics">Comics</string>
+    <string name="logo_marvel">Logo marvel</string>
+    <string name="button_qr_code">button QR code</string>
+    <string name="character_name">"Nom du personnage "</string>
+    <string name="search_button">boutton de recherche</string>
+    <string name="stories">Histoires</string>
+    <string name="series">Series</string>
+    <string name="comics">Comics</string>
+    <string name="character_image">Image du personnage</string>
+    <string name="no_description">Aucune description donnée</string>
+    <string name="no_creator">Aucun créateur répertorié</string>
+    <string name="price">Prix :</string>
+    <string name="numberOfPagesComics">Nombre de pages :</string>
+    <string name="comics_image">Image du comics</string>
+    <string name="creator">Créateur</string>
+    <string name="creator_image">Image du créateur</string>
+    <string name="comics_name">Nom du comics</string>
+    <string name="cameraGranted">Autorisation d\'accès a la caméra accordée</string>
+    <string name="cameraNotGranted">Autorisation d\'accès a la caméra refusée</string>
+    <string name="cameraError">"Erreur d'initialisation de la caméra : "</string>
+</resources>

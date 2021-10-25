@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.modele.characters.Hero
+import com.marvel.model.characters.Hero
 import com.marvel.ui.activity.CharacterDetailActivity
 
 

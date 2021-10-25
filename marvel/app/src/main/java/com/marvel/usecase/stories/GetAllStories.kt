@@ -1,6 +1,6 @@
 package com.marvel.usecase.stories
 
-import com.marvel.modele.stories.ResponseStoriesAPI
+import com.marvel.model.stories.ResponseStoriesAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 

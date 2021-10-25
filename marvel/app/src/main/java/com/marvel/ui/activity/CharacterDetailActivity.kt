@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.modele.characters.Hero
+import com.marvel.model.characters.Hero
 import com.marvel.ui.fragment.comics.recyclerview.ComicsAdapter
 import com.marvel.ui.series.SeriesAdapter
 import com.marvel.ui.stories.StoriesAdapter
@@ -34,6 +34,11 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
 
     private lateinit var character: Hero
 
+    companion object {
+        const val COMICS = "comics"
+        const val SERIES = "series"
+        const val STORIES = "stories"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,9 +51,9 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
         setImageCharacter()
         nameCharacter.text = character.name
 
-        setRecyclerView(recyclerViewComics, "comics")
-        setRecyclerView(recyclerViewSeries, "series")
-        setRecyclerView(recyclerViewStories, "stories")
+        setRecyclerView(recyclerViewComics, COMICS)
+        setRecyclerView(recyclerViewSeries, SERIES)
+        setRecyclerView(recyclerViewStories, STORIES)
 
     }
 
@@ -80,20 +85,23 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
                 val id = character.id
 
                 when (type) {
-                    "comics" -> {
-                        val responseAPi = GetCharacterComicsUseCase(id.toString()).execute().getOrThrow()
+                    COMICS -> {
+                        val responseAPi =
+                            GetCharacterComicsUseCase(id.toString()).execute().getOrThrow()
                         val data = responseAPi?.data?.results
                         val adapter = ComicsAdapter(data, this@CharacterDetailActivity)
                         recyclerView.adapter = adapter
                     }
-                    "series" ->{
-                        val responseAPi = GetCharacterSeriesUseCase(id.toString()).execute().getOrThrow()
+                    SERIES -> {
+                        val responseAPi =
+                            GetCharacterSeriesUseCase(id.toString()).execute().getOrThrow()
                         val data = responseAPi?.data?.results
                         val adapter = SeriesAdapter(data)
                         recyclerView.adapter = adapter
                     }
-                    "stories" ->{
-                        val responseAPi = GetCharacterStoriesUseCase(id.toString()).execute().getOrThrow()
+                    STORIES -> {
+                        val responseAPi =
+                            GetCharacterStoriesUseCase(id.toString()).execute().getOrThrow()
                         val data = responseAPi?.data?.results
                         val adapter = StoriesAdapter(data)
                         recyclerView.adapter = adapter
@@ -112,7 +120,8 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
     override fun onBackPressed() {
         super.onBackPressed()
 
-        val intent = Intent(this,MainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
+
 }

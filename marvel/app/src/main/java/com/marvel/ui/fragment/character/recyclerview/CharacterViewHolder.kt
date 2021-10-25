@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.modele.characters.Hero
+import com.marvel.model.characters.Hero
 import com.squareup.picasso.Picasso
 
 
