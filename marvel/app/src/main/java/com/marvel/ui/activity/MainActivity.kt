@@ -69,5 +69,12 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if (supportFragmentManager.backStackEntryCount == 0) {
+            //todo dialog demande de quitter l'app
+            finish()
+        }
+    }
 
 }

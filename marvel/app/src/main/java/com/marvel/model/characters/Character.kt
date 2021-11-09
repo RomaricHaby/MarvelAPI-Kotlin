@@ -5,7 +5,7 @@ import com.marvel.model.common.Thumbnail
 import java.io.Serializable
 
 
-data class Hero(
+data class Character(
     @SerializedName("id") val id: Int,
     @SerializedName("name") val name: String,
     @SerializedName("description") val description: String,

@@ -1,6 +1,5 @@
 package com.marvel.ui.activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -10,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.model.characters.Hero
+import com.marvel.model.characters.Character
 import com.marvel.ui.fragment.comics.recyclerview.ComicsAdapter
 import com.marvel.ui.series.SeriesAdapter
 import com.marvel.ui.stories.StoriesAdapter
@@ -26,13 +25,14 @@ import kotlinx.coroutines.launch
 class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() {
     private lateinit var imageCharacter: ImageView
     private lateinit var nameCharacter: TextView
+    private lateinit var descriptionCharacter: TextView
 
     private lateinit var recyclerViewComics: RecyclerView
     private lateinit var recyclerViewSeries: RecyclerView
     private lateinit var recyclerViewStories: RecyclerView
 
 
-    private lateinit var character: Hero
+    private lateinit var character: Character
 
     companion object {
         const val COMICS = "comics"
@@ -46,15 +46,15 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
 
         unitUI()
 
-        character = intent.getSerializableExtra("character") as Hero
+        character = intent.getSerializableExtra("character") as Character
 
         setImageCharacter()
         nameCharacter.text = character.name
+        descriptionCharacter.text = character.description
 
         setRecyclerView(recyclerViewComics, COMICS)
         setRecyclerView(recyclerViewSeries, SERIES)
         setRecyclerView(recyclerViewStories, STORIES)
-
     }
 
 
@@ -63,6 +63,7 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
         recyclerViewComics = findViewById(R.id.recyclerViewComicsCharacterDetail)
         recyclerViewStories = findViewById(R.id.recyclerViewStoriesCharacterDetail)
 
+        descriptionCharacter = findViewById(R.id.CharacterDetailDescription)
         imageCharacter = findViewById(R.id.CharacterDetailImage)
         nameCharacter = findViewById(R.id.CharacterDetailName)
     }
@@ -113,12 +114,4 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
             }
         }
     }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-    }
-
 }

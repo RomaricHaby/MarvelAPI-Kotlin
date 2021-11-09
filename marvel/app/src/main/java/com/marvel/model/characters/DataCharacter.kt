@@ -7,5 +7,5 @@ data class DataCharacter(
     @SerializedName("limit") val limit: Int,
     @SerializedName("total") val total: Int,
     @SerializedName("count") val count: Int,
-    @SerializedName("results") val results: List<Hero>
+    @SerializedName("results") val results: List<Character>
 )

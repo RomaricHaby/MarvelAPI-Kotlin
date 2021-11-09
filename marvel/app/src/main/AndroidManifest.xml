@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Marvel"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.activity.FavoritesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.CreatorDetailActivity"
             android:exported="true" />
         <activity

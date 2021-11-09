@@ -1,19 +1,25 @@
 package com.marvel.ui.fragment.character.recyclerview
 
-
 import android.content.Context
 import android.view.View
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.model.characters.Hero
+import com.marvel.model.characters.Character
 import com.squareup.picasso.Picasso
 
 
 class CharacterViewHolder(itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView) {
-        fun updateCharacter(character: Hero) {
+
+        lateinit var favButton: ImageButton
+
+        fun updateCharacter(character: Character) {
+            favButton = itemView.findViewById(R.id.viewHolderCharacterButtonFav)
+
             val characterImage: ImageView = itemView.findViewById(R.id.viewHolderCharacterIMG)
             val nameCharacter: TextView = itemView.findViewById(R.id.viewHolderNameCharacter)
             val nbrSeries: TextView = itemView.findViewById(R.id.viewHolderCharacterNumberSerie)
