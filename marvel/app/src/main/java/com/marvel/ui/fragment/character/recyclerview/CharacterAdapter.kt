@@ -41,11 +41,11 @@ class CharacterAdapter(list: List<Character>?, private val context: Context) :
             if (DataUser.isCharacterFav(items)) {
                 DataUser.removeFavCharacter(items)
 
-                Toast.makeText(context, "Personnage retiré des favoris",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, items?.name + " retiré des favoris", Toast.LENGTH_SHORT).show()
             } else {
                 DataUser.addFavCharacter(items)
 
-                Toast.makeText(context, "Personnage ajouté des favoris",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, items?.name + " ajouté des favoris", Toast.LENGTH_SHORT).show()
             }
         }
 

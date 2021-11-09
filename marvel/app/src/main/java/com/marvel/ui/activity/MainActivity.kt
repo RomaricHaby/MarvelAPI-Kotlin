@@ -16,6 +16,7 @@ import kotlinx.coroutines.*
 class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
     private lateinit var navigation: BottomNavigationView
     private lateinit var buttonQRCode : ImageButton
+    private lateinit var buttonFav : ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +36,21 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         }
     }
 
+    private fun buttonFav(){
+        buttonFav.setOnClickListener {
+            val intent = Intent(this, FavoritesActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
     private fun unitUI() {
         navigation = findViewById(R.id.bottom_nav_bar)
         buttonQRCode = findViewById(R.id.action_qrcode)
+        buttonFav = findViewById(R.id.action_fav)
 
         initBottomNavBar()
         buttonQRCode()
+        buttonFav()
     }
 
     private fun initBottomNavBar() {

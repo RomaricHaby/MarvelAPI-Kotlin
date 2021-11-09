@@ -7,6 +7,7 @@ import com.marvel.model.characters.Character
 import com.marvel.model.comics.Comics
 import com.marvel.model.series.Series
 import com.marvel.model.stories.Stories
+import com.marvel.model.user.DataUser
 import com.marvel.usecase.character.*
 import kotlinx.coroutines.launch
 
@@ -21,7 +22,6 @@ class CharacterViewModel : ViewModel() {
         }
         return characterList
     }
-
 
     fun getSearchCharacterFromAPI(nameCharacter: String): MutableLiveData<List<Character>?> {
         val characterList = MutableLiveData<List<Character>?>()
