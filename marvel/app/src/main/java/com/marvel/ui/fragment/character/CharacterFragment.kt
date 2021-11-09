@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.ui.fragment.character.recyclerview.CharacterAdapter
 import com.marvel.ui.viewmodel.CharacterViewModel
-import com.marvel.usecase.character.GetCharacterByNameUseCase
-import kotlinx.coroutines.*
 
 
 class CharacterFragment : Fragment() {
@@ -21,9 +19,7 @@ class CharacterFragment : Fragment() {
     private lateinit var searchButton: ImageButton
     private lateinit var searchNameCharacter: EditText
 
-
-    private val  viewModel = CharacterViewModel()
-
+    private val viewModel = CharacterViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,11 +45,12 @@ class CharacterFragment : Fragment() {
     private fun setUpSearchCharacter() {
         searchButton.setOnClickListener {
             if (searchNameCharacter.text.isNotEmpty()) {
-                viewModel.getSearchCharacterFromAPI(searchNameCharacter.text.toString()).observe(viewLifecycleOwner, { data ->
-                    val adapter = context?.let { CharacterAdapter(data, it) }
-                    // Setting the Adapter with the recyclerview
-                    recyclerView.adapter = adapter
-                })
+                viewModel.getSearchCharacterFromAPI(searchNameCharacter.text.toString())
+                    .observe(viewLifecycleOwner, { data ->
+                        val adapter = context?.let { CharacterAdapter(data, it) }
+                        // Setting the Adapter with the recyclerview
+                        recyclerView.adapter = adapter
+                    })
             }
         }
     }

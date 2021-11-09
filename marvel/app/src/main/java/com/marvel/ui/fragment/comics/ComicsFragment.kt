@@ -6,22 +6,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.ui.fragment.comics.recyclerview.ComicsAdapter
-import com.marvel.usecase.comics.GetAllComicsUseCase
-import com.marvel.usecase.comics.GetComicsByNameUseCase
-import kotlinx.coroutines.*
+import com.marvel.ui.viewmodel.ComicsViewModel
 
-class ComicsFragment : Fragment(), CoroutineScope by MainScope() {
+class ComicsFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchButton: ImageButton
     private lateinit var searchNameComics: EditText
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+    private val viewModel = ComicsViewModel()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         val view = inflater.inflate(R.layout.fragment_comics, container, false)
 
@@ -42,16 +46,12 @@ class ComicsFragment : Fragment(), CoroutineScope by MainScope() {
     private fun setUpSearchComics() {
         searchButton.setOnClickListener {
             if (searchNameComics.text.isNotEmpty()) {
-                val response = runBlocking {
-                    GetComicsByNameUseCase(searchNameComics.text.toString()).execute().getOrThrow()
-                }
-                val data = response?.data?.results
-
-                // This will pass the ArrayList to our Adapter
-                val adapter = context?.let { ComicsAdapter(data, it) }
-
-                // Setting the Adapter with the recyclerview
-                recyclerView.adapter = adapter
+                viewModel.getSearchComicsFromAPI(searchNameComics.text.toString())
+                    .observe(viewLifecycleOwner, { data ->
+                        val adapter = context?.let { ComicsAdapter(data, it) }
+                        // Setting the Adapter with the recyclerview
+                        recyclerView.adapter = adapter
+                    })
             }
         }
     }
@@ -59,20 +59,10 @@ class ComicsFragment : Fragment(), CoroutineScope by MainScope() {
     private fun setRecyclerViewComics() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        launch(Dispatchers.Main) {
-            try {
-                val comics = GetAllComicsUseCase().execute().getOrThrow()
-                val data = comics?.data?.results
-
-                // This will pass the ArrayList to our Adapter
-                val adapter = context?.let { ComicsAdapter(data, it) }
-
-                // Setting the Adapter with the recyclerview
-                recyclerView.adapter = adapter
-
-            } catch (e: Exception) {
-                Toast.makeText(context, "Error Occurred: ${e.message}", Toast.LENGTH_LONG).show()
-            }
-        }
+        viewModel.getAllComicsFromAPI().observe(viewLifecycleOwner, { data ->
+            val adapter = context?.let { ComicsAdapter(data, it) }
+            // Setting the Adapter with the recyclerview
+            recyclerView.adapter = adapter
+        })
     }
 }
