@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View.VISIBLE
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,12 +11,10 @@ import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
 import com.marvel.model.comics.Comics
 import com.marvel.ui.creator.CreatorAdapter
-import com.marvel.usecase.comics.GetComicsCreatorsUseCase
+import com.marvel.ui.viewmodel.ComicsViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
 
 class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() {
     private lateinit var imageComics: ImageView
@@ -31,6 +28,8 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
     private lateinit var recyclerViewCreator: RecyclerView
 
     private lateinit var comics: Comics
+
+    private val viewModel = ComicsViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,30 +81,18 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
         // this creates a vertical layout Manager
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        launch(Dispatchers.Main) {
-            try {
-                val id = comics.id
+        val id = comics.id
 
-                when (type) {
-                    "creator" -> {
-                        val responseAPi =
-                            GetComicsCreatorsUseCase(id.toString()).execute().getOrThrow()
-                        val data = responseAPi?.data?.results
-
-                        if (data?.isEmpty() == true) {
+        when (type) {
+            "creator" -> {
+                viewModel.getComicsCreatorFromAPI(id.toString())
+                    .observe(this@ComicsDetailActivity, {
+                        if (it?.isEmpty() == true) {
                             noCreator.visibility = VISIBLE
                         }
 
-                        val adapter = CreatorAdapter(data, this@ComicsDetailActivity)
-                        recyclerView.adapter = adapter
-                    }
-                }
-            } catch (e: Exception) {
-                Toast.makeText(
-                    this@ComicsDetailActivity,
-                    "Error Occurred: ${e.message}",
-                    Toast.LENGTH_LONG
-                ).show()
+                        recyclerView.adapter = CreatorAdapter(it, this@ComicsDetailActivity)
+                    })
             }
         }
     }

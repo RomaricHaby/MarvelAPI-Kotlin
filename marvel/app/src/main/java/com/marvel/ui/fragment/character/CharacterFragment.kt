@@ -21,6 +21,7 @@ class CharacterFragment : Fragment() {
 
     private val viewModel = CharacterViewModel()
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

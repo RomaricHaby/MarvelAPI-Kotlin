@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_character_detail.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_creator_detail.xml" value="0.3046875" />
         <entry key="app/src/main/res/layout/activity_favorites.xml" value="0.29270833333333335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2864583333333333" />
         <entry key="app/src/main/res/layout/activity_scan_qrcode.xml" value="0.3307291666666667" />
         <entry key="app/src/main/res/layout/bottom_nav.xml" value="0.2864583333333333" />
+        <entry key="app/src/main/res/layout/fragment_event.xml" value="0.3046875" />
         <entry key="app/src/main/res/layout/view_holder_character.xml" value="0.55" />
         <entry key="app/src/main/res/layout/view_holder_comics.xml" value="0.24365942028985507" />
       </map>
