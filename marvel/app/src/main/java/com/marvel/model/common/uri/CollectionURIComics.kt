@@ -10,4 +10,4 @@ data class CollectionURIComics(
     @SerializedName("role") val role: String?,
     @SerializedName("items") val items: List<ResourcesURI>,
     @SerializedName("returned") val returned: Int,
-): Serializable
+) : Serializable

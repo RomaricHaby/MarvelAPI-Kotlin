@@ -4,7 +4,7 @@ import com.marvel.model.comics.ResponseComicsAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 
-class GetAllComicsUseCase: UseCase<ResponseComicsAPI?> {
+class GetAllComicsUseCase : UseCase<ResponseComicsAPI?> {
     override suspend fun execute(): Result<ResponseComicsAPI?> {
         return try {
             val response = ApiClientMarvel.apiServiceMarvel.getAllComics()

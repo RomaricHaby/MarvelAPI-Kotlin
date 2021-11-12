@@ -15,8 +15,8 @@ import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
     private lateinit var navigation: BottomNavigationView
-    private lateinit var buttonQRCode : ImageButton
-    private lateinit var buttonFav : ImageButton
+    private lateinit var buttonQRCode: ImageButton
+    private lateinit var buttonFav: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,14 +29,14 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         loadFragment(CharacterFragment())
     }
 
-    private fun buttonQRCode(){
+    private fun buttonQRCode() {
         buttonQRCode.setOnClickListener {
             val intent = Intent(this, ScanQRCodeActivity::class.java)
             startActivity(intent)
         }
     }
 
-    private fun buttonFav(){
+    private fun buttonFav() {
         buttonFav.setOnClickListener {
             val intent = Intent(this, FavoritesActivity::class.java)
             startActivity(intent)

@@ -1,11 +1,10 @@
 package com.marvel.usecase.events
 
-import com.marvel.model.comics.ResponseComicsAPI
 import com.marvel.model.events.ResponseEventsAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 
-class GetEventByNameUseCase (private val name: String) : UseCase<ResponseEventsAPI?> {
+class GetEventByNameUseCase(private val name: String) : UseCase<ResponseEventsAPI?> {
 
     override suspend fun execute(): Result<ResponseEventsAPI?> {
         return try {

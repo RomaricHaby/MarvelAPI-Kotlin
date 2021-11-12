@@ -2,6 +2,7 @@ package com.marvel.ui.fragment.character.recyclerview
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -15,6 +16,7 @@ import com.marvel.ui.activity.CharacterDetailActivity
 class CharacterAdapter(list: List<Character>?, private val context: Context) :
     RecyclerView.Adapter<CharacterViewHolder>() {
     private var characterList: List<Character>? = list
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -39,13 +41,18 @@ class CharacterAdapter(list: List<Character>?, private val context: Context) :
         //Click sur le button fav dans le view holder
         holder.favButton.setOnClickListener {
             if (DataUser.isCharacterFav(items)) {
-                DataUser.removeFavCharacter(items)
+                items?.let { it -> DataUser.removeFavCharacter(it) }
 
-                Toast.makeText(context, items?.name + " retiré des favoris", Toast.LENGTH_SHORT).show()
+                holder.favButton.setColorFilter(Color.argb(255, 255, 255, 255))
+                Toast.makeText(context, items?.name + " retiré des favoris", Toast.LENGTH_SHORT)
+                    .show()
+
             } else {
-                DataUser.addFavCharacter(items)
+                items?.let { it -> DataUser.addFavCharacter(it) }
 
-                Toast.makeText(context, items?.name + " ajouté des favoris", Toast.LENGTH_SHORT).show()
+                holder.favButton.setColorFilter(Color.argb(255, 255, 0, 0))
+                Toast.makeText(context, items?.name + " ajouté des favoris", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 

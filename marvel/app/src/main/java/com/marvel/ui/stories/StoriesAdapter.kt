@@ -6,11 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.model.stories.Stories
 
-class StoriesAdapter (list: List<Stories>?) : RecyclerView.Adapter<StoriesViewHolder>() {
+class StoriesAdapter(list: List<Stories>?) : RecyclerView.Adapter<StoriesViewHolder>() {
     private var storiesList: List<Stories>? = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoriesViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_holder_stories, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.view_holder_stories, parent, false)
         return StoriesViewHolder(view, parent.context)
     }
 

@@ -1,13 +1,13 @@
 package com.marvel.model.comics
 
 import com.google.gson.annotations.SerializedName
-import com.marvel.model.common.uri.CollectionURIComics
-import com.marvel.model.common.uri.ResourcesURI
 import com.marvel.model.common.Thumbnail
 import com.marvel.model.common.type.TypeDateAPI
 import com.marvel.model.common.type.TypeLanguage
 import com.marvel.model.common.type.TypePrice
 import com.marvel.model.common.type.TypeURL
+import com.marvel.model.common.uri.CollectionURIComics
+import com.marvel.model.common.uri.ResourcesURI
 import java.io.Serializable
 
 

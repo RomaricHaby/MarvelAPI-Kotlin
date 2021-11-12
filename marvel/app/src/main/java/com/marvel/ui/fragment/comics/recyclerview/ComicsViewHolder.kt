@@ -10,7 +10,8 @@ import com.marvel.R
 import com.marvel.model.comics.Comics
 import com.squareup.picasso.Picasso
 
-class ComicsViewHolder(itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView){
+class ComicsViewHolder(itemView: View, private val context: Context) :
+    RecyclerView.ViewHolder(itemView) {
 
     fun updateComics(comics: Comics) {
         val comicsImage: ImageView = itemView.findViewById(R.id.viewHolderComicsIMG)

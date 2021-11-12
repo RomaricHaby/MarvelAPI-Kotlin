@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.model.series.Series
 
-class SeriesViewHolder(itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView) {
+class SeriesViewHolder(itemView: View, private val context: Context) :
+    RecyclerView.ViewHolder(itemView) {
 
     fun updateSeries(series: Series) {
 

@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.model.events.Events
 
-class EventAdapter(list: List<Events>?, private val context: Context) : RecyclerView.Adapter<EventViewHolder>() {
+class EventAdapter(list: List<Events>?, private val context: Context) :
+    RecyclerView.Adapter<EventViewHolder>() {
     private var comicsList: List<Events>? = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_holder_event, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.view_holder_event, parent, false)
         return EventViewHolder(view, parent.context)
     }
 

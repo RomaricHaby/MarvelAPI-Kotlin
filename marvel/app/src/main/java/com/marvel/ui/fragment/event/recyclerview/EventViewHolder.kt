@@ -10,7 +10,8 @@ import com.marvel.R
 import com.marvel.model.events.Events
 import com.squareup.picasso.Picasso
 
-class EventViewHolder(itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView) {
+class EventViewHolder(itemView: View, private val context: Context) :
+    RecyclerView.ViewHolder(itemView) {
 
     fun updateEvent(event: Events) {
         val eventImage: ImageView = itemView.findViewById(R.id.viewHolderImageEvent)

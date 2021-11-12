@@ -4,7 +4,7 @@ import com.marvel.model.series.ResponseSeriesAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 
-class GetCharacterSeriesUseCase (private val id: String) : UseCase<ResponseSeriesAPI?> {
+class GetCharacterSeriesUseCase(private val id: String) : UseCase<ResponseSeriesAPI?> {
 
     override suspend fun execute(): Result<ResponseSeriesAPI?> {
         return try {

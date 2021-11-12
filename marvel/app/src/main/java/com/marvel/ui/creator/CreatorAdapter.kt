@@ -10,11 +10,13 @@ import com.marvel.model.creators.Creator
 import com.marvel.ui.activity.CreatorDetailActivity
 
 
-class CreatorAdapter (list: List<Creator>?, private val context: Context) : RecyclerView.Adapter<CreatorViewHolder>() {
+class CreatorAdapter(list: List<Creator>?, private val context: Context) :
+    RecyclerView.Adapter<CreatorViewHolder>() {
     private var creatorList: List<Creator>? = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CreatorViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_holder_creator, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.view_holder_creator, parent, false)
         return CreatorViewHolder(view, parent.context)
     }
 
@@ -24,7 +26,7 @@ class CreatorAdapter (list: List<Creator>?, private val context: Context) : Recy
             holder.updateCreator(items)
         }
 
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             val intent = Intent(context, CreatorDetailActivity::class.java)
             intent.putExtra("creators", items)
             context.startActivity(intent)

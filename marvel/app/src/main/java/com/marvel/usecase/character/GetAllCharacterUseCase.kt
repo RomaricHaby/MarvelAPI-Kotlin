@@ -4,7 +4,7 @@ import com.marvel.model.characters.ResponseCharacterAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 
-class GetAllCharacterUseCase () : UseCase<ResponseCharacterAPI?> {
+class GetAllCharacterUseCase() : UseCase<ResponseCharacterAPI?> {
 
     override suspend fun execute(): Result<ResponseCharacterAPI?> {
         return try {

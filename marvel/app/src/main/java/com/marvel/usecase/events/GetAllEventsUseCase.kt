@@ -4,7 +4,7 @@ import com.marvel.model.events.ResponseEventsAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 
-class GetAllEventsUseCase: UseCase<ResponseEventsAPI?> {
+class GetAllEventsUseCase : UseCase<ResponseEventsAPI?> {
     override suspend fun execute(): Result<ResponseEventsAPI?> {
         return try {
             val response = ApiClientMarvel.apiServiceMarvel.getAllEvents()

@@ -85,5 +85,4 @@ interface ApiServiceMarvel {
     suspend fun getAllStories(): Response<ResponseStoriesAPI>
 
 
-
 }

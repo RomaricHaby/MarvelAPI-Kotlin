@@ -6,11 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.model.series.Series
 
-class SeriesAdapter (list: List<Series>?) : RecyclerView.Adapter<SeriesViewHolder>() {
+class SeriesAdapter(list: List<Series>?) : RecyclerView.Adapter<SeriesViewHolder>() {
     private var seriesList: List<Series>? = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeriesViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_holder_series, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.view_holder_series, parent, false)
         return SeriesViewHolder(view, parent.context)
     }
 

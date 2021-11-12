@@ -8,4 +8,4 @@ data class ResourcesURI(
     @SerializedName("name") val name: String,
     @SerializedName("role") val role: String?,
     @SerializedName("type") val type: String?
-): Serializable
+) : Serializable

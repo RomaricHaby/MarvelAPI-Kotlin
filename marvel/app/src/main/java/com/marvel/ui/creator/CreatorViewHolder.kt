@@ -8,7 +8,8 @@ import com.marvel.R
 import com.marvel.model.creators.Creator
 
 
-class CreatorViewHolder(itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView) {
+class CreatorViewHolder(itemView: View, private val context: Context) :
+    RecyclerView.ViewHolder(itemView) {
 
     fun updateCreator(creator: Creator) {
 

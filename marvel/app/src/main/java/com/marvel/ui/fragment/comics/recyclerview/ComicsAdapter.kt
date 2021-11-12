@@ -9,11 +9,13 @@ import com.marvel.R
 import com.marvel.model.comics.Comics
 import com.marvel.ui.activity.ComicsDetailActivity
 
-class ComicsAdapter (list: List<Comics>?, private val context: Context) : RecyclerView.Adapter<ComicsViewHolder>() {
+class ComicsAdapter(list: List<Comics>?, private val context: Context) :
+    RecyclerView.Adapter<ComicsViewHolder>() {
     private var comicsList: List<Comics>? = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComicsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_holder_comics, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.view_holder_comics, parent, false)
         return ComicsViewHolder(view, parent.context)
     }
 
@@ -23,7 +25,7 @@ class ComicsAdapter (list: List<Comics>?, private val context: Context) : Recycl
             holder.updateComics(comics = items)
         }
 
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             val intent = Intent(context, ComicsDetailActivity::class.java)
             intent.putExtra("comics", items)
             context.startActivity(intent)

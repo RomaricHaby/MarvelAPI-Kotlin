@@ -3,19 +3,19 @@ package com.marvel.model.user
 import com.marvel.model.characters.Character
 
 object DataUser {
-    var listCharacterFav : MutableList<Character> = ArrayList()
+    var listCharacterFav: ArrayList<Character> = ArrayList()
 
     //Characters
-    fun addFavCharacter(items: Character?) {
+    fun addFavCharacter(items: Character) {
         if (!listCharacterFav.contains(items)) {
-             listCharacterFav.plus(items)
+            listCharacterFav.add(items)
 
         }
     }
 
-    fun removeFavCharacter(items: Character?) {
+    fun removeFavCharacter(items: Character) {
         if (listCharacterFav.contains(items)) {
-            listCharacterFav.drop(listCharacterFav.indexOf(items))
+            listCharacterFav.removeAt(listCharacterFav.indexOf(items))
         }
     }
 
