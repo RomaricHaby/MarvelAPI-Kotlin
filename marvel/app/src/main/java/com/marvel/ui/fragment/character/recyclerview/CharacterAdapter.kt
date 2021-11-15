@@ -11,6 +11,7 @@ import com.marvel.R
 import com.marvel.model.characters.Character
 import com.marvel.model.user.DataUser
 import com.marvel.ui.activity.CharacterDetailActivity
+import com.marvel.ui.activity.MainActivity
 
 
 class CharacterAdapter(list: List<Character>?, private val context: Context) :
