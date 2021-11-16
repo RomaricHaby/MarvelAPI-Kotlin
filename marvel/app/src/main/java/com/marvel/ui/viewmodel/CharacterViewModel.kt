@@ -1,5 +1,6 @@
 package com.marvel.ui.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class CharacterViewModel : ViewModel() {
 
-    fun getAllCharacterFromAPI(): MutableLiveData<List<Character>?> {
+    fun getAllCharacterFromAPI(): LiveData<List<Character>?> {
         val characterList = MutableLiveData<List<Character>?>()
         viewModelScope.launch {
             val character = GetAllCharacterUseCase().execute().getOrThrow()
@@ -22,7 +23,7 @@ class CharacterViewModel : ViewModel() {
         return characterList
     }
 
-    fun getSearchCharacterFromAPI(nameCharacter: String): MutableLiveData<List<Character>?> {
+    fun getSearchCharacterFromAPI(nameCharacter: String): LiveData<List<Character>?> {
         val characterList = MutableLiveData<List<Character>?>()
         viewModelScope.launch {
             val character = GetCharacterByNameUseCase(nameCharacter).execute().getOrThrow()
@@ -32,7 +33,7 @@ class CharacterViewModel : ViewModel() {
         return characterList
     }
 
-    fun getCharacterComicsFromAPI(id: String): MutableLiveData<List<Comics>?> {
+    fun getCharacterComicsFromAPI(id: String): LiveData<List<Comics>?> {
         val characterList = MutableLiveData<List<Comics>?>()
         viewModelScope.launch {
             val character = GetCharacterComicsUseCase(id).execute().getOrThrow()
@@ -42,7 +43,7 @@ class CharacterViewModel : ViewModel() {
         return characterList
     }
 
-    fun getCharacterSeriesFromAPI(id: String): MutableLiveData<List<Series>?> {
+    fun getCharacterSeriesFromAPI(id: String): LiveData<List<Series>?> {
         val characterList = MutableLiveData<List<Series>?>()
         viewModelScope.launch {
             val character = GetCharacterSeriesUseCase(id).execute().getOrThrow()
@@ -52,7 +53,7 @@ class CharacterViewModel : ViewModel() {
         return characterList
     }
 
-    fun getCharacterStoriesFromAPI(id: String): MutableLiveData<List<Stories>?> {
+    fun getCharacterStoriesFromAPI(id: String): LiveData<List<Stories>?> {
         val characterList = MutableLiveData<List<Stories>?>()
         viewModelScope.launch {
             val character = GetCharacterStoriesUseCase(id).execute().getOrThrow()

@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
+import com.marvel.manager.SharedPreferencesManager
 import com.marvel.model.characters.Character
 import com.marvel.model.user.DataUser
 import com.marvel.ui.activity.CharacterDetailActivity
-import com.marvel.ui.activity.MainActivity
 
 
 class CharacterAdapter(list: List<Character>?, private val context: Context) :
@@ -55,6 +55,8 @@ class CharacterAdapter(list: List<Character>?, private val context: Context) :
                 Toast.makeText(context, items?.name + " ajouté des favoris", Toast.LENGTH_SHORT)
                     .show()
             }
+
+            SharedPreferencesManager.saveAllCharacter(context)
         }
 
     }

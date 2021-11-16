@@ -1,9 +1,11 @@
 package com.marvel.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
 import com.marvel.model.creators.Creator
@@ -15,6 +17,7 @@ import kotlinx.coroutines.MainScope
 class CreatorDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() {
     private lateinit var creatorImage: ImageView
     private lateinit var creatorName: TextView
+    private lateinit var homeButton: FloatingActionButton
 
     private lateinit var creator: Creator
 
@@ -34,6 +37,18 @@ class CreatorDetailActivity : AppCompatActivity(), CoroutineScope by MainScope()
     private fun unitUI() {
         creatorImage = findViewById(R.id.CreatorDetailImage)
         creatorName = findViewById(R.id.CreatorDetailName)
+        homeButton = findViewById(R.id.floatingButtonHome)
+
+        setHomeButton()
+    }
+
+    private fun setHomeButton() {
+        homeButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+        }
     }
 
     private fun setImageCreator() {

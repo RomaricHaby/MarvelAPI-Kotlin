@@ -1,5 +1,6 @@
 package com.marvel.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View.VISIBLE
 import android.widget.ImageView
@@ -7,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
 import com.marvel.model.comics.Comics
@@ -24,6 +26,7 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
     private lateinit var noCreator: TextView
     private lateinit var noDescription: TextView
     private lateinit var priceComics: TextView
+    private lateinit var homeButton: FloatingActionButton
 
     private lateinit var recyclerViewCreator: RecyclerView
 
@@ -65,6 +68,18 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
         noDescription = findViewById(R.id.recyclerViewDescriptionComics_tv)
         priceComics = findViewById(R.id.ComicsPrix)
 
+        homeButton = findViewById(R.id.floatingButtonHome)
+        setHomeButton()
+
+    }
+
+    private fun setHomeButton() {
+        homeButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+        }
     }
 
     private fun setImageComics() {

@@ -1,5 +1,6 @@
 package com.marvel.ui.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class ComicsViewModel : ViewModel() {
 
-    fun getAllComicsFromAPI(): MutableLiveData<List<Comics>?> {
+    fun getAllComicsFromAPI(): LiveData<List<Comics>?> {
         val liveData = MutableLiveData<List<Comics>?>()
         viewModelScope.launch {
             val character = GetAllComicsUseCase().execute().getOrThrow()
@@ -22,7 +23,7 @@ class ComicsViewModel : ViewModel() {
         return liveData
     }
 
-    fun getSearchComicsFromAPI(nameCharacter: String): MutableLiveData<List<Comics>?> {
+    fun getSearchComicsFromAPI(nameCharacter: String): LiveData<List<Comics>?> {
         val liveData = MutableLiveData<List<Comics>?>()
         viewModelScope.launch {
             val character = GetComicsByNameUseCase(nameCharacter).execute().getOrThrow()
@@ -32,7 +33,7 @@ class ComicsViewModel : ViewModel() {
         return liveData
     }
 
-    fun getComicsCreatorFromAPI(id: String): MutableLiveData<List<Creator>?> {
+    fun getComicsCreatorFromAPI(id: String): LiveData<List<Creator>?> {
         val liveData = MutableLiveData<List<Creator>?>()
         viewModelScope.launch {
             val character = GetComicsCreatorsUseCase(id).execute().getOrThrow()

@@ -1,11 +1,13 @@
 package com.marvel.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
 import com.marvel.model.characters.Character
@@ -21,6 +23,7 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
     private lateinit var imageCharacter: ImageView
     private lateinit var nameCharacter: TextView
     private lateinit var descriptionCharacter: TextView
+    private var homeButton: FloatingActionButton? = null
 
     private lateinit var recyclerViewComics: RecyclerView
     private lateinit var recyclerViewSeries: RecyclerView
@@ -61,9 +64,22 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
         recyclerViewComics = findViewById(R.id.recyclerViewComicsCharacterDetail)
         recyclerViewStories = findViewById(R.id.recyclerViewStoriesCharacterDetail)
 
+
+        homeButton = findViewById(R.id.floatingButtonHome)
+        setHomeButton()
+
         descriptionCharacter = findViewById(R.id.CharacterDetailDescription)
         imageCharacter = findViewById(R.id.CharacterDetailImage)
         nameCharacter = findViewById(R.id.CharacterDetailName)
+    }
+
+    private fun setHomeButton() {
+        homeButton?.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+        }
     }
 
     private fun setImageCharacter() {
@@ -99,8 +115,6 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
                     val adapter = StoriesAdapter(data)
                     recyclerView.adapter = adapter
                 })
-
         }
-
     }
 }

@@ -1,5 +1,6 @@
 package com.marvel.ui.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class EventViewModel : ViewModel() {
 
-    fun getAllEventFromAPI(): MutableLiveData<List<Events>?> {
+    fun getAllEventFromAPI(): LiveData<List<Events>?> {
         val liveData = MutableLiveData<List<Events>?>()
         viewModelScope.launch {
             val event = GetAllEventsUseCase().execute().getOrThrow()
@@ -21,7 +22,7 @@ class EventViewModel : ViewModel() {
     }
 
 
-    fun getSearchEventFromAPI(nameEvent: String): MutableLiveData<List<Events>?> {
+    fun getSearchEventFromAPI(nameEvent: String): LiveData<List<Events>?> {
         val liveData = MutableLiveData<List<Events>?>()
         viewModelScope.launch {
             val event = GetEventByNameUseCase(nameEvent).execute().getOrThrow()
