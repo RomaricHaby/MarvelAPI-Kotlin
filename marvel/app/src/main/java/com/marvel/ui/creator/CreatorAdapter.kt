@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.model.creators.Creator
-import com.marvel.ui.activity.CreatorDetailActivity
+import com.marvel.ui.detail.CreatorDetailActivity
 
 
 class CreatorAdapter(list: List<Creator>?, private val context: Context) :

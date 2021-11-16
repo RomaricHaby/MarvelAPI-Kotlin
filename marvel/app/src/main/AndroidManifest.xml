@@ -16,32 +16,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Marvel"
         android:usesCleartextTraffic="true">
+
+
         <activity
-            android:name=".ui.activity.FavoritesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.activity.CreatorDetailActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.activity.ScanQRCodeActivity"
-            android:exported="true"
-            android:screenOrientation="fullSensor"
-            android:stateNotNeeded="true"
-            tools:replace="android:screenOrientation" />
-        <activity
-            android:name=".ui.activity.ComicsDetailActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.activity.CharacterDetailActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.activity.MainActivity"
+            android:name=".ui.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.favorites.FavoritesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detail.CreatorDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.qrcode.ScanQRCodeActivity"
+            android:exported="true"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            tools:replace="android:screenOrientation" />
+        <activity
+            android:name=".ui.detail.ComicsDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.detail.CharacterDetailActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true">
+
         </activity>
     </application>
 
