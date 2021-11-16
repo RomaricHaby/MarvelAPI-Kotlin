@@ -2,13 +2,16 @@ package com.marvel.ui.detail
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.zxing.BarcodeFormat
 import com.jakewharton.picasso.OkHttp3Downloader
+import com.journeyapps.barcodescanner.BarcodeEncoder
 import com.marvel.R
 import com.marvel.model.characters.Character
 import com.marvel.ui.MainActivity
@@ -25,6 +28,8 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
     private lateinit var nameCharacter: TextView
     private lateinit var descriptionCharacter: TextView
     private var homeButton: FloatingActionButton? = null
+    private lateinit var right: ImageButton
+    private lateinit var left: ImageButton
 
     private lateinit var recyclerViewComics: RecyclerView
     private lateinit var recyclerViewSeries: RecyclerView
@@ -66,12 +71,36 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
         recyclerViewStories = findViewById(R.id.recyclerViewStoriesCharacterDetail)
 
 
+        right = findViewById(R.id.imageButtonRight)
+        left = findViewById(R.id.imageButtonLeft)
         homeButton = findViewById(R.id.floatingButtonHome)
-        setHomeButton()
+
 
         descriptionCharacter = findViewById(R.id.CharacterDetailDescription)
         imageCharacter = findViewById(R.id.CharacterDetailImage)
         nameCharacter = findViewById(R.id.CharacterDetailName)
+
+        setHomeButton()
+        qrcodeImage()
+        characterImage()
+    }
+
+    private fun qrcodeImage() {
+        right.setOnClickListener {
+            try {
+                val barcodeEncoder = BarcodeEncoder()
+                val bitmap = barcodeEncoder.encodeBitmap(character.id.toString(), BarcodeFormat.QR_CODE, 400, 400)
+                imageCharacter.setImageBitmap(bitmap)
+
+            } catch (e: Exception) {
+            }
+        }
+    }
+
+    private fun characterImage() {
+        left.setOnClickListener {
+            setImageCharacter()
+        }
     }
 
     private fun setHomeButton() {

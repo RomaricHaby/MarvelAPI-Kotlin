@@ -190,6 +190,29 @@
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
                 tools:text="As the Norse God of thunder and lightning, Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate.  He's self-assured, and he would never, ever stop fighting for a worthwhile cause." />
 
+            <ImageButton
+                android:id="@+id/imageButtonLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="@+id/CharacterDetailImage"
+                app:layout_constraintEnd_toStartOf="@+id/CharacterDetailImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/CharacterDetailImage"
+                app:layout_constraintVertical_bias="0.49"
+                app:srcCompat="@drawable/ic_baseline_arrow_left_24" />
+
+            <ImageButton
+                android:id="@+id/imageButtonRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="@+id/CharacterDetailImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/CharacterDetailImage"
+                app:layout_constraintTop_toTopOf="@+id/CharacterDetailImage"
+                app:srcCompat="@drawable/ic_baseline_arrow_right_24" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
