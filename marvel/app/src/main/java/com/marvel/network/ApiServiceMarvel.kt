@@ -43,7 +43,6 @@ interface ApiServiceMarvel {
     ): Response<ResponseStoriesAPI>
 
 
-
     //Comics
     @GET("/v1/public/comics")
     suspend fun getAllComics(): Response<ResponseComicsAPI>
@@ -59,11 +58,9 @@ interface ApiServiceMarvel {
     ): Response<ResponseCreatorsAPI>
 
 
-
     //Series
     @GET("/v1/public/series")
     suspend fun getAllSeries(): Response<ResponseSeriesAPI>
-
 
 
     //Events

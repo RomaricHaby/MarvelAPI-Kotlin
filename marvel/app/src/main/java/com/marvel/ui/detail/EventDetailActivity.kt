@@ -1,10 +1,10 @@
 package com.marvel.ui.detail
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
@@ -25,7 +25,7 @@ class EventDetailActivity : AppCompatActivity() {
 
         unitUI()
 
-       event = intent.getSerializableExtra("events") as Event
+        event = intent.getSerializableExtra("events") as Event
 
         setImageCharacter()
         nameEvent.text = event.title
@@ -43,7 +43,6 @@ class EventDetailActivity : AppCompatActivity() {
 
         setHomeButton()
     }
-
 
 
     private fun setHomeButton() {

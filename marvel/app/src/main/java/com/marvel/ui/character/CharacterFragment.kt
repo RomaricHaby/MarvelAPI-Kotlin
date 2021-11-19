@@ -48,7 +48,7 @@ class CharacterFragment : Fragment() {
                 viewModel.getSearchCharacterFromAPI(searchNameCharacter.text.toString())
                     .observe(viewLifecycleOwner, { data ->
                         val adapter = context?.let { CharacterAdapter(data, it) }
-                        // Setting the Adapter with the recyclerview
+
                         recyclerView.adapter = adapter
                     })
             }

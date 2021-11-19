@@ -98,13 +98,12 @@ class CharacterDetailActivity : AppCompatActivity() {
         showComics()
     }
 
-    private fun showComics(){
+    private fun showComics() {
         showComics.setOnClickListener {
-            if (recyclerViewComics.visibility == View.VISIBLE){
+            if (recyclerViewComics.visibility == View.VISIBLE) {
                 recyclerViewComics.visibility = View.GONE
                 showComics.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_downward_24))
-            }
-            else{
+            } else {
                 recyclerViewComics.visibility = View.VISIBLE
                 showComics.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_upward_24))
             }
@@ -112,13 +111,12 @@ class CharacterDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun showSeries(){
+    private fun showSeries() {
         showSeries.setOnClickListener {
-            if (recyclerViewSeries.visibility == View.VISIBLE){
+            if (recyclerViewSeries.visibility == View.VISIBLE) {
                 recyclerViewSeries.visibility = View.GONE
                 showSeries.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_downward_24))
-            }
-            else{
+            } else {
                 recyclerViewSeries.visibility = View.VISIBLE
                 showSeries.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_upward_24))
             }
@@ -126,13 +124,12 @@ class CharacterDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun showStories(){
+    private fun showStories() {
         showStories.setOnClickListener {
-            if (recyclerViewStories.visibility == View.VISIBLE){
+            if (recyclerViewStories.visibility == View.VISIBLE) {
                 recyclerViewStories.visibility = View.GONE
                 showStories.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_downward_24))
-            }
-            else{
+            } else {
                 recyclerViewStories.visibility = View.VISIBLE
                 showStories.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_upward_24))
             }
@@ -142,10 +139,15 @@ class CharacterDetailActivity : AppCompatActivity() {
 
     private fun qrcodeImage() {
         right.setOnClickListener {
-            if(!isQrCodeGenerate){
+            if (!isQrCodeGenerate) {
                 try {
                     val barcodeEncoder = BarcodeEncoder()
-                    val bitmap = barcodeEncoder.encodeBitmap(character.id.toString(), BarcodeFormat.QR_CODE, 400, 400)
+                    val bitmap = barcodeEncoder.encodeBitmap(
+                        character.id.toString(),
+                        BarcodeFormat.QR_CODE,
+                        400,
+                        400
+                    )
                     imageCharacter.setImageBitmap(bitmap)
 
                 } catch (e: Exception) {
@@ -159,7 +161,7 @@ class CharacterDetailActivity : AppCompatActivity() {
 
     private fun characterImage() {
         left.setOnClickListener {
-            if(isQrCodeGenerate){
+            if (isQrCodeGenerate) {
                 setImageCharacter()
 
                 isQrCodeGenerate = false

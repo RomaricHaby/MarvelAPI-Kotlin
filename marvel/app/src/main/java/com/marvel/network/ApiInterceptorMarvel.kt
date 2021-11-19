@@ -14,7 +14,8 @@ class ApiInterceptorMarvel : Interceptor {
 
         val timestamp = LocalDateTime.now().toString()
 
-        val hash = runBlocking { GetMD5UseCase(timestamp + ResourcesManager.privateKey + ResourcesManager.publicKey).execute() }
+        val hash =
+            runBlocking { GetMD5UseCase(timestamp + ResourcesManager.privateKey + ResourcesManager.publicKey).execute() }
 
         requestBuilder.url(
             chain.request().url.newBuilder()

@@ -17,16 +17,11 @@ class FavoritesActivity : AppCompatActivity() {
     private lateinit var noFavTextView: TextView
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorites)
 
         unitUI()
-
-
-
 
 
     }

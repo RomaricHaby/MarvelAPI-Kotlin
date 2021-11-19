@@ -9,7 +9,8 @@ import com.marvel.R
 import com.marvel.model.serie.Serie
 import com.marvel.ui.detail.SeriesDetailActivity
 
-class SeriesAdapter(list: List<Serie>?, private val context: Context) : RecyclerView.Adapter<SeriesViewHolder>() {
+class SeriesAdapter(list: List<Serie>?, private val context: Context) :
+    RecyclerView.Adapter<SeriesViewHolder>() {
     private var serieList: List<Serie>? = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeriesViewHolder {

@@ -1,11 +1,11 @@
 package com.marvel.ui.detail
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
@@ -14,7 +14,7 @@ import com.marvel.ui.MainActivity
 import com.squareup.picasso.Picasso
 
 class SeriesDetailActivity : AppCompatActivity() {
-private lateinit var noDescription : TextView
+    private lateinit var noDescription: TextView
     private lateinit var imageSeries: ImageView
     private lateinit var nameSeries: TextView
     private lateinit var descriptionSeries: TextView
@@ -36,7 +36,7 @@ private lateinit var noDescription : TextView
         if (serie.description == null) {
             noDescription.visibility = View.VISIBLE
         }
-            descriptionSeries.text = serie.description
+        descriptionSeries.text = serie.description
 
 
     }

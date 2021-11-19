@@ -34,7 +34,7 @@ class CharacterAdapter(list: List<Character>?, private val context: Context) :
         }
     }
 
-    private fun onCellClicked(holder: CharacterViewHolder, items : Character?) {
+    private fun onCellClicked(holder: CharacterViewHolder, items: Character?) {
         holder.itemView.setOnClickListener {
             val intent = Intent(context, CharacterDetailActivity::class.java)
             intent.putExtra("character", items)
@@ -42,7 +42,7 @@ class CharacterAdapter(list: List<Character>?, private val context: Context) :
         }
     }
 
-    private fun onButtonFavClicked(holder: CharacterViewHolder, items : Character?) {
+    private fun onButtonFavClicked(holder: CharacterViewHolder, items: Character?) {
         holder.favButton.setOnClickListener {
             if (DataUser.isCharacterFav(items)) {
                 items?.let { DataUser.removeFavCharacter(it) }
@@ -55,7 +55,8 @@ class CharacterAdapter(list: List<Character>?, private val context: Context) :
                 items?.let { DataUser.addFavCharacter(it) }
 
                 holder.favButton.setColorFilter(Color.argb(255, 255, 0, 0))
-                Toast.makeText(context, items?.name + " ajouté des favoris", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, items?.name + " ajouté des favoris", Toast.LENGTH_SHORT)
+                    .show()
             }
 
             SharedPreferencesManager.saveAllCharacter(context)
