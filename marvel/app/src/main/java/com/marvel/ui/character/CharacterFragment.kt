@@ -58,7 +58,7 @@ class CharacterFragment : Fragment() {
     private fun setRecyclerViewCharacter() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        viewModel.getAllCharacterFromAPI().observe(viewLifecycleOwner, { data ->
+        viewModel.getAllCharactersFromAPI().observe(viewLifecycleOwner, { data ->
             val adapter = context?.let { CharacterAdapter(data, it) }
             recyclerView.adapter = adapter
         })

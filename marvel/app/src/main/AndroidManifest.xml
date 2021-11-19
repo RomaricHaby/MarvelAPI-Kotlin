@@ -32,7 +32,7 @@
             android:name=".ui.detail.EventDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.favorite.FavoritesActivity"
+            android:name=".ui.favorite.FavoriteActivity"
             android:exported="false" />
         <activity
             android:name=".ui.detail.CreatorDetailActivity"

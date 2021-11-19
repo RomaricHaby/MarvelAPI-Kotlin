@@ -1,4 +1,4 @@
-package com.marvel.model.serie
+package com.marvel.model.series
 
 import com.google.gson.annotations.SerializedName
 
@@ -7,5 +7,5 @@ data class DataSeries(
     @SerializedName("limit") val limit: Int,
     @SerializedName("total") val total: Int,
     @SerializedName("count") val count: Int,
-    @SerializedName("results") val results: List<Serie>
+    @SerializedName("results") val results: List<Series>
 )

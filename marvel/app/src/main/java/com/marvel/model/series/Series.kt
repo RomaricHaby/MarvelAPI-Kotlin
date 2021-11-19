@@ -1,4 +1,4 @@
-package com.marvel.model.serie
+package com.marvel.model.series
 
 import com.google.gson.annotations.SerializedName
 import com.marvel.model.common.*
@@ -6,7 +6,7 @@ import com.marvel.model.common.type.TypeURL
 import com.marvel.model.common.uri.ResourcesURI
 import java.io.Serializable
 
-data class Serie(
+data class Series(
     @SerializedName("id") val id: Int,
     @SerializedName("title") val title: String,
     @SerializedName("description") val description: String,

@@ -14,7 +14,7 @@ import com.marvel.R
 import com.marvel.model.comic.Comic
 import com.marvel.ui.MainActivity
 import com.marvel.ui.creator.CreatorAdapter
-import com.marvel.ui.viewmodel.ComicsViewModel
+import com.marvel.ui.viewmodel.ComicViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
@@ -33,7 +33,7 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
 
     private lateinit var comic: Comic
 
-    private val viewModel = ComicsViewModel()
+    private val viewModel = ComicViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,7 +101,7 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
 
         when (type) {
             "creator" -> {
-                viewModel.getComicsCreatorFromAPI(id.toString())
+                viewModel.getComicCreatorsFromAPI(id.toString())
                     .observe(this@ComicsDetailActivity, {
                         if (it?.isEmpty() == true) {
                             noCreator.visibility = VISIBLE

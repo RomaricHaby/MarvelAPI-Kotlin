@@ -11,7 +11,7 @@ import com.marvel.usecase.comic.GetComicByNameUseCase
 import com.marvel.usecase.comic.GetComicCreatorsUseCase
 import kotlinx.coroutines.launch
 
-class ComicsViewModel : ViewModel() {
+class ComicViewModel : ViewModel() {
 
     fun getAllComicsFromAPI(): LiveData<List<Comic>?> {
         val liveData = MutableLiveData<List<Comic>?>()
@@ -23,17 +23,17 @@ class ComicsViewModel : ViewModel() {
         return liveData
     }
 
-    fun getSearchComicsFromAPI(nameCharacter: String): LiveData<List<Comic>?> {
+    fun getSearchComicFromAPI(nameComic: String): LiveData<List<Comic>?> {
         val liveData = MutableLiveData<List<Comic>?>()
         viewModelScope.launch {
-            val character = GetComicByNameUseCase(nameCharacter).execute().getOrThrow()
+            val character = GetComicByNameUseCase(nameComic).execute().getOrThrow()
             val data = character?.dataComics?.results
             liveData.postValue(data)
         }
         return liveData
     }
 
-    fun getComicsCreatorFromAPI(id: String): LiveData<List<Creator>?> {
+    fun getComicCreatorsFromAPI(id: String): LiveData<List<Creator>?> {
         val liveData = MutableLiveData<List<Creator>?>()
         viewModelScope.launch {
             val character = GetComicCreatorsUseCase(id).execute().getOrThrow()
@@ -42,6 +42,4 @@ class ComicsViewModel : ViewModel() {
         }
         return liveData
     }
-
-
 }

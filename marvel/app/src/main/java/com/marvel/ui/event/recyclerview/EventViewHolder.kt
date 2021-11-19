@@ -13,12 +13,27 @@ import com.squareup.picasso.Picasso
 class EventViewHolder(itemView: View, private val context: Context) :
     RecyclerView.ViewHolder(itemView) {
 
+    private lateinit var eventImage: ImageView
+    private lateinit var nameEvent: TextView
+
     fun updateEvent(event: Event) {
-        val eventImage: ImageView = itemView.findViewById(R.id.viewHolderImageEvent)
-        val nameEvent: TextView = itemView.findViewById(R.id.viewHolderNameEvent)
+        initUI()
 
+        setUpDataEvent(event)
+
+        setUpEventImage(event)
+    }
+
+    private fun initUI() {
+        eventImage = itemView.findViewById(R.id.viewHolderImageEvent)
+        nameEvent = itemView.findViewById(R.id.viewHolderNameEvent)
+    }
+
+    private fun setUpDataEvent(event: Event) {
         nameEvent.text = event.title
+    }
 
+    private fun setUpEventImage(event: Event) {
         val builder = Picasso.Builder(context)
         builder.downloader(OkHttp3Downloader(context))
         builder.build().load(event.thumbnail.path + "." + event.thumbnail.extension)

@@ -9,7 +9,6 @@ import com.marvel.R
 import com.marvel.model.event.Event
 import com.marvel.ui.detail.EventDetailActivity
 
-
 class EventAdapter(list: List<Event>?, private val context: Context) :
     RecyclerView.Adapter<EventViewHolder>() {
     private var eventList: List<Event>? = list
@@ -21,14 +20,17 @@ class EventAdapter(list: List<Event>?, private val context: Context) :
     }
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
-        val items = eventList?.get(position)
-        if (items != null) {
-            holder.updateEvent(items)
+        val item = eventList?.get(position)
+        if (item != null) {
+            holder.updateEvent(item)
+            onCellClicked(holder, item)
         }
+    }
 
+    private fun onCellClicked(holder: EventViewHolder, item: Event) {
         holder.itemView.setOnClickListener {
             val intent = Intent(context, EventDetailActivity::class.java)
-            intent.putExtra("events", items)
+            intent.putExtra("events", item)
             context.startActivity(intent)
         }
     }

@@ -64,7 +64,6 @@ class ScanQRCodeActivity : AppCompatActivity() {
             }
         }
 
-
         scannerView.setOnClickListener {
             codeScanner.startPreview()
         }
@@ -100,26 +99,3 @@ class ScanQRCodeActivity : AppCompatActivity() {
         super.onPause()
     }
 }
-
-
-/* private lateinit var mQrResultLauncher: ActivityResultLauncher<Intent>
-
- override fun onCreate(savedInstanceState: Bundle?) {
-     super.onCreate(savedInstanceState)
-     setContentView(com.marvel.R.layout.activity_scan_qrcode)
-
-
-
- }*/
-
-
-/*try {
-       val barcodeEncoder = BarcodeEncoder()
-       val bitmap = barcodeEncoder.encodeBitmap("1009368", BarcodeFormat.QR_CODE, 400, 400)
-       val imageViewQrCode = findViewById<View>(com.marvel.R.id.qrCode) as ImageView
-       imageViewQrCode.setImageBitmap(bitmap)
-
-   } catch (e: Exception) {
-   }*/
-
-//setUPForScan()

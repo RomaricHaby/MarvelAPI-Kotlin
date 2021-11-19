@@ -12,7 +12,7 @@ import com.marvel.model.user.DataUser
 import com.marvel.ui.character.recyclerview.CharacterAdapter
 
 
-class FavoritesActivity : AppCompatActivity() {
+class FavoriteActivity : AppCompatActivity() {
     private lateinit var recyclerViewCharacter: RecyclerView
     private lateinit var noFavTextView: TextView
 
@@ -23,7 +23,7 @@ class FavoritesActivity : AppCompatActivity() {
 
         unitUI()
 
-
+        setRecyclerView()
     }
 
     private fun unitUI() {
@@ -35,16 +35,12 @@ class FavoritesActivity : AppCompatActivity() {
         } else {
             noFavTextView.visibility = View.INVISIBLE
         }
-
-        setRecyclerView()
     }
 
     private fun setRecyclerView() {
-        // this creates a vertical layout Manager
         recyclerViewCharacter.layoutManager = LinearLayoutManager(applicationContext)
         val adapter = applicationContext?.let { CharacterAdapter(DataUser.listCharacterFav, it) }
         recyclerViewCharacter.adapter = adapter
 
     }
-
 }

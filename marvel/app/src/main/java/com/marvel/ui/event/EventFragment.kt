@@ -30,6 +30,7 @@ class EventFragment : Fragment(), CoroutineScope by MainScope() {
         val view = inflater.inflate(R.layout.fragment_event, container, false)
 
         initUI(view)
+
         setRecyclerViewEvent()
 
         setUpSearchEvent()
@@ -46,9 +47,9 @@ class EventFragment : Fragment(), CoroutineScope by MainScope() {
     private fun setRecyclerViewEvent() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        viewModel.getAllEventFromAPI().observe(viewLifecycleOwner, { data ->
+        viewModel.getAllEventsFromAPI().observe(viewLifecycleOwner, { data ->
             val adapter = context?.let { EventAdapter(data, it) }
-            // Setting the Adapter with the recyclerview
+
             recyclerView.adapter = adapter
         })
     }
@@ -59,12 +60,10 @@ class EventFragment : Fragment(), CoroutineScope by MainScope() {
                 viewModel.getSearchEventFromAPI(searchNameEvent.text.toString())
                     .observe(viewLifecycleOwner, { data ->
                         val adapter = context?.let { EventAdapter(data, it) }
-                        // Setting the Adapter with the recyclerview
+
                         recyclerView.adapter = adapter
                     })
             }
         }
     }
-
-
 }

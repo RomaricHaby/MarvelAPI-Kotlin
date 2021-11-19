@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.marvel.R
 import com.marvel.ui.character.CharacterFragment
-import com.marvel.ui.comic.ComicsFragment
+import com.marvel.ui.comic.ComicFragment
 import com.marvel.ui.event.EventFragment
-import com.marvel.ui.favorite.FavoritesActivity
+import com.marvel.ui.favorite.FavoriteActivity
 import com.marvel.ui.qrcode.ScanQRCodeActivity
 import kotlinx.coroutines.*
 
@@ -19,28 +19,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var buttonQRCode: ImageButton
     private lateinit var buttonFav: ImageButton
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         unitUI()
 
+        onButtonQRCodeClicked()
+        onButtonFavClicked()
+
         loadFragment(CharacterFragment())
-    }
-
-    private fun buttonQRCode() {
-        buttonQRCode.setOnClickListener {
-            val intent = Intent(this, ScanQRCodeActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun buttonFav() {
-        buttonFav.setOnClickListener {
-            val intent = Intent(this, FavoritesActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     private fun unitUI() {
@@ -49,8 +37,20 @@ class MainActivity : AppCompatActivity() {
         buttonFav = findViewById(R.id.action_fav)
 
         initBottomNavBar()
-        buttonQRCode()
-        buttonFav()
+    }
+
+    private fun onButtonQRCodeClicked() {
+        buttonQRCode.setOnClickListener {
+            val intent = Intent(this, ScanQRCodeActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun onButtonFavClicked() {
+        buttonFav.setOnClickListener {
+            val intent = Intent(this, FavoriteActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initBottomNavBar() {
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
         navigation.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.action_comics -> loadFragment(ComicsFragment())
+                R.id.action_comics -> loadFragment(ComicFragment())
 
                 R.id.action_character -> loadFragment(CharacterFragment())
 
@@ -85,5 +85,4 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
     }
-
 }

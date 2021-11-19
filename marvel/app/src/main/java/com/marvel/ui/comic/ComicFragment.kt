@@ -10,16 +10,16 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.ui.comic.recyclerview.ComicsAdapter
-import com.marvel.ui.viewmodel.ComicsViewModel
+import com.marvel.ui.comic.recyclerview.ComicAdapter
+import com.marvel.ui.viewmodel.ComicViewModel
 
-class ComicsFragment : Fragment() {
+class ComicFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchButton: ImageButton
     private lateinit var searchNameComics: EditText
 
 
-    private val viewModel = ComicsViewModel()
+    private val viewModel = ComicViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,9 +46,9 @@ class ComicsFragment : Fragment() {
     private fun setUpSearchComics() {
         searchButton.setOnClickListener {
             if (searchNameComics.text.isNotEmpty()) {
-                viewModel.getSearchComicsFromAPI(searchNameComics.text.toString())
+                viewModel.getSearchComicFromAPI(searchNameComics.text.toString())
                     .observe(viewLifecycleOwner, { data ->
-                        val adapter = context?.let { ComicsAdapter(data, it) }
+                        val adapter = context?.let { ComicAdapter(data, it) }
                         // Setting the Adapter with the recyclerview
                         recyclerView.adapter = adapter
                     })
@@ -60,7 +60,7 @@ class ComicsFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         viewModel.getAllComicsFromAPI().observe(viewLifecycleOwner, { data ->
-            val adapter = context?.let { ComicsAdapter(data, it) }
+            val adapter = context?.let { ComicAdapter(data, it) }
             // Setting the Adapter with the recyclerview
             recyclerView.adapter = adapter
         })

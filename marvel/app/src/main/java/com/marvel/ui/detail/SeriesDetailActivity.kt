@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.model.serie.Serie
+import com.marvel.model.series.Series
 import com.marvel.ui.MainActivity
 import com.squareup.picasso.Picasso
 
@@ -18,7 +18,7 @@ class SeriesDetailActivity : AppCompatActivity() {
     private lateinit var imageSeries: ImageView
     private lateinit var nameSeries: TextView
     private lateinit var descriptionSeries: TextView
-    private lateinit var serie: Serie
+    private lateinit var series: Series
     private lateinit var homeButton: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,15 +28,15 @@ class SeriesDetailActivity : AppCompatActivity() {
 
         unitUI()
 
-        serie = intent.getSerializableExtra("series") as Serie
+        series = intent.getSerializableExtra("series") as Series
 
         setImageCharacter()
-        nameSeries.text = serie.title
+        nameSeries.text = series.title
 
-        if (serie.description == null) {
+        if (series.description == null) {
             noDescription.visibility = View.VISIBLE
         }
-        descriptionSeries.text = serie.description
+        descriptionSeries.text = series.description
 
 
     }
@@ -66,7 +66,7 @@ class SeriesDetailActivity : AppCompatActivity() {
     private fun setImageCharacter() {
         val builder = Picasso.Builder(this)
         builder.downloader(OkHttp3Downloader(this))
-        builder.build().load(serie.thumbnail.path + "." + serie.thumbnail.extension)
+        builder.build().load(series.thumbnail.path + "." + series.thumbnail.extension)
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.ic_launcher_background)
             .into(imageSeries)

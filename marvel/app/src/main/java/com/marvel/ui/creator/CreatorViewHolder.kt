@@ -1,6 +1,5 @@
 package com.marvel.ui.creator
 
-import android.content.Context
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -8,13 +7,22 @@ import com.marvel.R
 import com.marvel.model.creator.Creator
 
 
-class CreatorViewHolder(itemView: View, private val context: Context) :
+class CreatorViewHolder(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
 
+    private lateinit var nameCreator: TextView
+
     fun updateCreator(creator: Creator) {
+        initIU()
 
-        val nameCreators: TextView = itemView.findViewById(R.id.viewHolderNameCreator)
+        setUpDataCreator(creator)
+    }
 
-        nameCreators.text = creator.fullName
+    private fun setUpDataCreator(creator: Creator) {
+        nameCreator.text = creator.fullName
+    }
+
+    private fun initIU() {
+        nameCreator = itemView.findViewById(R.id.viewHolderNameCreator)
     }
 }

@@ -1,6 +1,6 @@
-package com.marvel.usecase.serie
+package com.marvel.usecase.series
 
-import com.marvel.model.serie.ResponseSeriesAPI
+import com.marvel.model.series.ResponseSeriesAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 

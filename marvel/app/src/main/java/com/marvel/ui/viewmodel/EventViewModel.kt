@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class EventViewModel : ViewModel() {
 
-    fun getAllEventFromAPI(): LiveData<List<Event>?> {
+    fun getAllEventsFromAPI(): LiveData<List<Event>?> {
         val liveData = MutableLiveData<List<Event>?>()
         viewModelScope.launch {
             val event = GetAllEventsUseCase().execute().getOrThrow()
@@ -20,7 +20,6 @@ class EventViewModel : ViewModel() {
         }
         return liveData
     }
-
 
     fun getSearchEventFromAPI(nameEvent: String): LiveData<List<Event>?> {
         val liveData = MutableLiveData<List<Event>?>()

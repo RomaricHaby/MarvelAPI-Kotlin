@@ -6,14 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.marvel.model.character.Character
 import com.marvel.model.comic.Comic
-import com.marvel.model.serie.Serie
-import com.marvel.model.storie.Storie
+import com.marvel.model.series.Series
+import com.marvel.model.stories.Stories
 import com.marvel.usecase.character.*
 import kotlinx.coroutines.launch
 
 class CharacterViewModel : ViewModel() {
 
-    fun getAllCharacterFromAPI(): LiveData<List<Character>?> {
+    fun getAllCharactersFromAPI(): LiveData<List<Character>?> {
         val characterList = MutableLiveData<List<Character>?>()
         viewModelScope.launch {
             val character = GetAllCharactersUseCase().execute().getOrThrow()
@@ -43,8 +43,8 @@ class CharacterViewModel : ViewModel() {
         return characterList
     }
 
-    fun getCharacterSeriesFromAPI(id: String): LiveData<List<Serie>?> {
-        val characterList = MutableLiveData<List<Serie>?>()
+    fun getCharacterSeriesFromAPI(id: String): LiveData<List<Series>?> {
+        val characterList = MutableLiveData<List<Series>?>()
         viewModelScope.launch {
             val character = GetCharacterSeriesUseCase(id).execute().getOrThrow()
             val data = character?.dataSeries?.results
@@ -53,8 +53,8 @@ class CharacterViewModel : ViewModel() {
         return characterList
     }
 
-    fun getCharacterStoriesFromAPI(id: String): LiveData<List<Storie>?> {
-        val characterList = MutableLiveData<List<Storie>?>()
+    fun getCharacterStoriesFromAPI(id: String): LiveData<List<Stories>?> {
+        val characterList = MutableLiveData<List<Stories>?>()
         viewModelScope.launch {
             val character = GetCharacterStoriesUseCase(id).execute().getOrThrow()
             val data = character?.data?.results

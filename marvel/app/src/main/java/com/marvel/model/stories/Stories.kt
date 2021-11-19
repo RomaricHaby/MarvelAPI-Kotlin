@@ -1,10 +1,10 @@
-package com.marvel.model.storie
+package com.marvel.model.stories
 
 import com.google.gson.annotations.SerializedName
 import com.marvel.model.common.*
 import com.marvel.model.common.uri.ResourcesURI
 
-data class Storie(
+data class Stories(
     @SerializedName("id") val id: Int,
     @SerializedName("title") val title: String,
     @SerializedName("description") val description: String,
@@ -14,7 +14,7 @@ data class Storie(
     @SerializedName("thumbnail") val thumbnail: String,
     @SerializedName("creators") val creator: SimpleCreator,
     @SerializedName("characters") val characters: SimpleCharacter,
-    @SerializedName("series") val serie: SimpleSerie,
+    @SerializedName("series") val series: SimpleSeries,
     @SerializedName("comics") val comic: SimpleComic,
     @SerializedName("events") val event: SimpleEvent,
     @SerializedName("originalIssue") val originalIssue: ResourcesURI

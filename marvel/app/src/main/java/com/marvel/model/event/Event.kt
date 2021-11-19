@@ -20,7 +20,7 @@ data class Event(
     @SerializedName("characters") val characters: SimpleCharacter,
     @SerializedName("stories") val storie: SimpleStorie,
     @SerializedName("comics") val comic: SimpleComic,
-    @SerializedName("series") val serie: SimpleSerie,
+    @SerializedName("series") val series: SimpleSeries,
     @SerializedName("next") val next: ResourcesURI,
     @SerializedName("previous") val previous: ResourcesURI
 ) : Serializable

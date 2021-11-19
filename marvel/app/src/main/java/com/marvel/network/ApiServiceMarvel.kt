@@ -4,8 +4,8 @@ import com.marvel.model.character.ResponseCharactersAPI
 import com.marvel.model.comic.ResponseComicsAPI
 import com.marvel.model.creator.ResponseCreatorsAPI
 import com.marvel.model.event.ResponseEventsAPI
-import com.marvel.model.serie.ResponseSeriesAPI
-import com.marvel.model.storie.ResponseStoriesAPI
+import com.marvel.model.series.ResponseSeriesAPI
+import com.marvel.model.stories.ResponseStoriesAPI
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
