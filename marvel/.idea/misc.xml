@@ -34,10 +34,12 @@
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_upward_24.xml" value="0.4453125" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/drawable/ic_character_not_selected.xml" value="0.4453125" />
+        <entry key="app/src/main/res/drawable/ic_character_selected.xml" value="0.4453125" />
         <entry key="app/src/main/res/drawable/ic_comics.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/drawable/ic_comics_not_selected.xml" value="0.4453125" />
         <entry key="app/src/main/res/drawable/ic_comics_selected.xml" value="0.4453125" />
         <entry key="app/src/main/res/drawable/ic_event_not_selected.xml" value="0.4453125" />
+        <entry key="app/src/main/res/drawable/ic_event_selected.xml" value="0.4453125" />
         <entry key="app/src/main/res/drawable/ic_favorite.xml" value="0.20260416666666667" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.39791666666666664" />
         <entry key="app/src/main/res/drawable/ic_marvel_logo.xml" value="0.41770833333333335" />

@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initBottomNavBar() {
-        navigation.itemIconTintList = null
+
         navigation.selectedItemId = R.id.action_character
 
         navigation.setOnItemSelectedListener {
