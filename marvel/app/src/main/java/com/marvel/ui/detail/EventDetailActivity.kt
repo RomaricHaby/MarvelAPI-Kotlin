@@ -25,7 +25,7 @@ class EventDetailActivity : AppCompatActivity() {
 
         unitUI()
 
-        event = intent.getSerializableExtra("events") as Events
+       event = intent.getSerializableExtra("events") as Events
 
         setImageCharacter()
         nameEvent.text = event.title
@@ -37,7 +37,7 @@ class EventDetailActivity : AppCompatActivity() {
     private fun unitUI() {
         descriptionEvent = findViewById(R.id.EventDetailDescription)
         imageEvent = findViewById(R.id.EventDetailImage)
-        nameEvent = findViewById(R.id.SeriesDetailName)
+        nameEvent = findViewById(R.id.EventDetailName)
         homeButton = findViewById(R.id.floatingButtonHome)
 
 
