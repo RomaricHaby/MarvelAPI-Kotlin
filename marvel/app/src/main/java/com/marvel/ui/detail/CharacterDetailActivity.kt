@@ -2,6 +2,7 @@ package com.marvel.ui.detail
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -20,16 +21,18 @@ import com.marvel.ui.series.SeriesAdapter
 import com.marvel.ui.stories.StoriesAdapter
 import com.marvel.ui.viewmodel.CharacterViewModel
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.MainScope
 
-class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() {
+class CharacterDetailActivity : AppCompatActivity() {
     private lateinit var imageCharacter: ImageView
     private lateinit var nameCharacter: TextView
     private lateinit var descriptionCharacter: TextView
     private var homeButton: FloatingActionButton? = null
     private lateinit var right: ImageButton
     private lateinit var left: ImageButton
+
+    private lateinit var showStories: ImageButton
+    private lateinit var showSeries: ImageButton
+    private lateinit var showComics: ImageButton
 
     private lateinit var recyclerViewComics: RecyclerView
     private lateinit var recyclerViewSeries: RecyclerView
@@ -71,10 +74,13 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
         recyclerViewStories = findViewById(R.id.recyclerViewStoriesCharacterDetail)
 
 
-        right = findViewById(R.id.imageButtonRight)
-        left = findViewById(R.id.imageButtonLeft)
+        right = findViewById(R.id.CharacterDetailimageButtonRight)
+        left = findViewById(R.id.CharacterDetailimageButtonLeft)
         homeButton = findViewById(R.id.floatingButtonHome)
 
+        showStories = findViewById(R.id.CharacterDetailShowStories)
+        showSeries = findViewById(R.id.CharacterDetailShowSeries)
+        showComics = findViewById(R.id.CharacterDetailShowComics)
 
         descriptionCharacter = findViewById(R.id.CharacterDetailDescription)
         imageCharacter = findViewById(R.id.CharacterDetailImage)
@@ -83,6 +89,53 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
         setHomeButton()
         qrcodeImage()
         characterImage()
+
+
+        showStories()
+        showSeries()
+        showComics()
+    }
+
+    private fun showComics(){
+        showComics.setOnClickListener {
+            if (recyclerViewComics.visibility == View.VISIBLE){
+                recyclerViewComics.visibility = View.GONE
+                showComics.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_downward_24))
+            }
+            else{
+                recyclerViewComics.visibility = View.VISIBLE
+                showComics.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_upward_24))
+            }
+
+        }
+    }
+
+    private fun showSeries(){
+        showSeries.setOnClickListener {
+            if (recyclerViewSeries.visibility == View.VISIBLE){
+                recyclerViewSeries.visibility = View.GONE
+                showSeries.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_downward_24))
+            }
+            else{
+                recyclerViewSeries.visibility = View.VISIBLE
+                showSeries.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_upward_24))
+            }
+
+        }
+    }
+
+    private fun showStories(){
+        showStories.setOnClickListener {
+            if (recyclerViewStories.visibility == View.VISIBLE){
+                recyclerViewStories.visibility = View.GONE
+                showStories.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_downward_24))
+            }
+            else{
+                recyclerViewStories.visibility = View.VISIBLE
+                showStories.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_arrow_upward_24))
+            }
+
+        }
     }
 
     private fun qrcodeImage() {
@@ -136,13 +189,13 @@ class CharacterDetailActivity : AppCompatActivity(), CoroutineScope by MainScope
 
             SERIES -> viewModel.getCharacterSeriesFromAPI(id.toString())
                 .observe(this@CharacterDetailActivity, { data ->
-                    val adapter = SeriesAdapter(data)
+                    val adapter = SeriesAdapter(data, this@CharacterDetailActivity)
                     recyclerView.adapter = adapter
                 })
 
             STORIES -> viewModel.getCharacterStoriesFromAPI(id.toString())
                 .observe(this@CharacterDetailActivity, { data ->
-                    val adapter = StoriesAdapter(data)
+                    val adapter = StoriesAdapter(data, this@CharacterDetailActivity)
                     recyclerView.adapter = adapter
                 })
         }

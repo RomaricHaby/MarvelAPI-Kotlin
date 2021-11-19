@@ -1,12 +1,13 @@
 package com.marvel.ui.stories
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.model.stories.Stories
 
-class StoriesAdapter(list: List<Stories>?) : RecyclerView.Adapter<StoriesViewHolder>() {
+class StoriesAdapter(list: List<Stories>?,  private val context: Context) : RecyclerView.Adapter<StoriesViewHolder>() {
     private var storiesList: List<Stories>? = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoriesViewHolder {

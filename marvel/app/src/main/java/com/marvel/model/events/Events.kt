@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName
 import com.marvel.model.common.*
 import com.marvel.model.common.type.TypeURL
 import com.marvel.model.common.uri.ResourcesURI
+import java.io.Serializable
 
 data class Events(
     @SerializedName("id") val id: Int,
@@ -22,4 +23,4 @@ data class Events(
     @SerializedName("series") val series: SimpleSeries,
     @SerializedName("next") val next: ResourcesURI,
     @SerializedName("previous") val previous: ResourcesURI
-)
+) : Serializable

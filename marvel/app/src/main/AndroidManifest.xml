@@ -16,8 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Marvel"
         android:usesCleartextTraffic="true">
-
-
+        <activity
+            android:name=".ui.detail.SeriesDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.SplashScreenActivity"
             android:exported="true">
@@ -27,6 +28,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.detail.EventDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.favorites.FavoritesActivity"
             android:exported="false" />
@@ -45,12 +49,9 @@
         <activity
             android:name=".ui.detail.CharacterDetailActivity"
             android:exported="true" />
-
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

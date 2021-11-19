@@ -19,11 +19,11 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
 
-        val rocketImage = findViewById<ImageView>(R.id.image_view_animation).apply {
+       /* val rocketImage = findViewById<ImageView>(R.id.image_view_animation).apply {
             setBackgroundResource(R.drawable.animation_list)
             marvelAnimation = background as AnimationDrawable
         }
-        marvelAnimation.start()
+        marvelAnimation.start()*/
 
 
 
@@ -31,7 +31,7 @@ class SplashScreenActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 8500)
+        }, 0) // todo remettre à 8500
 
 
         //Load fav character

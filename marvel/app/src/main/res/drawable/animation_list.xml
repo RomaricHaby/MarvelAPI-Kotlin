@@ -1,5 +1,4 @@
-<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
-    android:oneshot="true">
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:oneshot="true">
     <item android:drawable="@raw/image00009"  android:duration="25" />
     <item android:drawable="@raw/image00010"  android:duration="25" />
     <item android:drawable="@raw/image00011"  android:duration="25" />
@@ -489,7 +488,4 @@
     <item android:drawable="@raw/image00495"  android:duration="25" />
     <item android:drawable="@raw/image00496"  android:duration="25" />
     <item android:drawable="@raw/image00497"  android:duration="25" />
-
-
-
 </animation-list>

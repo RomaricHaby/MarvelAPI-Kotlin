@@ -1,15 +1,18 @@
 package com.marvel.ui.event.recyclerview
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.model.events.Events
+import com.marvel.ui.detail.EventDetailActivity
+
 
 class EventAdapter(list: List<Events>?, private val context: Context) :
     RecyclerView.Adapter<EventViewHolder>() {
-    private var comicsList: List<Events>? = list
+    private var eventList: List<Events>? = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val view =
@@ -18,19 +21,19 @@ class EventAdapter(list: List<Events>?, private val context: Context) :
     }
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
-        val items = comicsList?.get(position)
+        val items = eventList?.get(position)
         if (items != null) {
             holder.updateEvent(items)
         }
 
         holder.itemView.setOnClickListener {
-            /*val intent = Intent(context, ComicsDetailActivity::class.java)
-            intent.putExtra("comics", items)
-            context.startActivity(intent)*/
+            val intent = Intent(context, EventDetailActivity::class.java)
+            intent.putExtra("events", items)
+            context.startActivity(intent)
         }
     }
 
     override fun getItemCount(): Int {
-        return comicsList?.size!!
+        return eventList?.size!!
     }
 }

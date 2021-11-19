@@ -13,8 +13,10 @@
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -95,11 +97,13 @@
                 android:layout_width="0dp"
                 android:layout_height="280dp"
                 android:layout_marginTop="8dp"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView17"
-                tools:listitem="@layout/view_holder_comics">
+                tools:listitem="@layout/view_holder_comics"
+                tools:visibility="visible">
 
             </androidx.recyclerview.widget.RecyclerView>
 
@@ -132,10 +136,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="290dp"
                 android:layout_marginTop="8dp"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"
-                tools:listitem="@layout/view_holder_series">
+                tools:listitem="@layout/view_holder_series"
+                tools:visibility="visible">
 
             </androidx.recyclerview.widget.RecyclerView>
 
@@ -171,11 +177,13 @@
                 android:layout_height="290dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="32dp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3"
-                tools:listitem="@layout/view_holder_stories" />
+                tools:listitem="@layout/view_holder_stories"
+                tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/CharacterDetailDescription"
@@ -191,7 +199,7 @@
                 tools:text="As the Norse God of thunder and lightning, Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate.  He's self-assured, and he would never, ever stop fighting for a worthwhile cause." />
 
             <ImageButton
-                android:id="@+id/imageButtonLeft"
+                android:id="@+id/CharacterDetailimageButtonLeft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
@@ -203,7 +211,7 @@
                 app:srcCompat="@drawable/ic_baseline_arrow_left_24" />
 
             <ImageButton
-                android:id="@+id/imageButtonRight"
+                android:id="@+id/CharacterDetailimageButtonRight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
@@ -212,6 +220,33 @@
                 app:layout_constraintStart_toEndOf="@+id/CharacterDetailImage"
                 app:layout_constraintTop_toTopOf="@+id/CharacterDetailImage"
                 app:srcCompat="@drawable/ic_baseline_arrow_right_24" />
+
+            <ImageButton
+                android:id="@+id/CharacterDetailShowComics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider3"
+                app:srcCompat="@drawable/ic_baseline_arrow_downward_24" />
+
+            <ImageButton
+                android:id="@+id/CharacterDetailShowSeries"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider4"
+                app:srcCompat="@drawable/ic_baseline_arrow_downward_24" />
+
+            <ImageButton
+                android:id="@+id/CharacterDetailShowStories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2"
+                app:srcCompat="@drawable/ic_baseline_arrow_downward_24" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
