@@ -1,6 +1,6 @@
 package com.marvel.network
 
-import com.marvel.model.characters.ResponseCharacterAPI
+import com.marvel.model.characters.ResponseCharactersAPI
 import com.marvel.model.comics.ResponseComicsAPI
 import com.marvel.model.creators.ResponseCreatorsAPI
 import com.marvel.model.events.ResponseEventsAPI
@@ -15,17 +15,17 @@ interface ApiServiceMarvel {
 
     //Characters
     @GET("/v1/public/characters")
-    suspend fun getAllCharacter(): Response<ResponseCharacterAPI>
+    suspend fun getAllCharacters(): Response<ResponseCharactersAPI>
 
     @GET("/v1/public/characters/{id}")
-    suspend fun getCharacter(
+    suspend fun getCharacterByID(
         @Path("id") id: String,
-    ): Response<ResponseCharacterAPI>
+    ): Response<ResponseCharactersAPI>
 
     @GET("/v1/public/characters")
     suspend fun getCharacterByName(
         @Query("nameStartsWith") nameStartsWith: String,
-    ): Response<ResponseCharacterAPI>
+    ): Response<ResponseCharactersAPI>
 
     @GET("/v1/public/characters/{id}/comics")
     suspend fun getCharacterComics(
@@ -43,33 +43,28 @@ interface ApiServiceMarvel {
     ): Response<ResponseStoriesAPI>
 
 
-    //Comics
-    @GET("/v1/public/comics/{id}")
-    suspend fun getComics(
-        @Path("id") id: String,
-    ): Response<ResponseComicsAPI>
 
+    //Comics
     @GET("/v1/public/comics")
     suspend fun getAllComics(): Response<ResponseComicsAPI>
 
-
     @GET("/v1/public/comics")
-    suspend fun getComicsByName(
+    suspend fun getComicByName(
         @Query("titleStartsWith") titleStartsWith: String,
     ): Response<ResponseComicsAPI>
 
     @GET("/v1/public/comics/{id}/creators")
-    suspend fun getComicsCreator(
+    suspend fun getComicCreators(
         @Path("id") id: String,
     ): Response<ResponseCreatorsAPI>
+
+
 
     //Series
     @GET("/v1/public/series")
     suspend fun getAllSeries(): Response<ResponseSeriesAPI>
 
-    //Creators
-    @GET("/v1/public/creators")
-    suspend fun getAllCreators(): Response<ResponseCreatorsAPI>
+
 
     //Events
     @GET("/v1/public/events")
@@ -79,10 +74,4 @@ interface ApiServiceMarvel {
     suspend fun getEventByName(
         @Query("nameStartsWith") nameStartsWith: String,
     ): Response<ResponseEventsAPI>
-
-    //Stories
-    @GET("/v1/public/stories")
-    suspend fun getAllStories(): Response<ResponseStoriesAPI>
-
-
 }

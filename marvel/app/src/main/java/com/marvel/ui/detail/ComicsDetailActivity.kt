@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.model.comics.Comics
+import com.marvel.model.comics.Comic
 import com.marvel.ui.MainActivity
 import com.marvel.ui.creator.CreatorAdapter
 import com.marvel.ui.viewmodel.ComicsViewModel
@@ -31,7 +31,7 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
 
     private lateinit var recyclerViewCreator: RecyclerView
 
-    private lateinit var comics: Comics
+    private lateinit var comic: Comic
 
     private val viewModel = ComicsViewModel()
 
@@ -39,21 +39,21 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comics_detail)
 
-        comics = intent.getSerializableExtra("comics") as Comics
+        comic = intent.getSerializableExtra("comics") as Comic
 
         unitUI()
 
         setImageComics()
-        nameComics.text = comics.title
+        nameComics.text = comic.title
 
-        if (comics.description == null) {
+        if (comic.description == null) {
             noDescription.visibility = VISIBLE
         }
 
-        descriptionComics.text = comics.description
-        nbrPagesComics.text = comics.pageCount.toString()
+        descriptionComics.text = comic.description
+        nbrPagesComics.text = comic.pageCount.toString()
 
-        priceComics.text = comics.prices[0].price.toString()
+        priceComics.text = comic.prices[0].price.toString()
 
 
         setRecyclerView(recyclerViewCreator, "creator")
@@ -86,7 +86,7 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
     private fun setImageComics() {
         val builder = Picasso.Builder(this)
         builder.downloader(OkHttp3Downloader(this))
-        builder.build().load(comics.thumbnail.path + "." + comics.thumbnail.extension)
+        builder.build().load(comic.thumbnail.path + "." + comic.thumbnail.extension)
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.ic_launcher_background)
             .into(imageComics)
@@ -97,7 +97,7 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
         // this creates a vertical layout Manager
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val id = comics.id
+        val id = comic.id
 
         when (type) {
             "creator" -> {

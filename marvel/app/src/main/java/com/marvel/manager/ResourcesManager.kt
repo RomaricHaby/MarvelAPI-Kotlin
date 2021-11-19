@@ -10,13 +10,6 @@ object ResourcesManager {
 
     private const val PATH = "src/main/resources/"
 
-    fun loadResource(path: String): String {
-        return File(
-            PATH,
-            path
-        ).readText()
-    }
-
     fun loadKeyAPI() {
         privateKey = BuildConfig.marvel_api_private
         publicKey = BuildConfig.marvel_api_public

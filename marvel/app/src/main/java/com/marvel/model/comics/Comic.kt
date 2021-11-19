@@ -6,12 +6,12 @@ import com.marvel.model.common.type.TypeDateAPI
 import com.marvel.model.common.type.TypeLanguage
 import com.marvel.model.common.type.TypePrice
 import com.marvel.model.common.type.TypeURL
-import com.marvel.model.common.uri.CollectionURIComics
+import com.marvel.model.common.uri.CollectionURIComic
 import com.marvel.model.common.uri.ResourcesURI
 import java.io.Serializable
 
 
-data class Comics(
+data class Comic(
     @SerializedName("id") val id: Int,
     @SerializedName("digitalId") val digitalId: Int,
     @SerializedName("title") val title: String,
@@ -37,8 +37,8 @@ data class Comics(
     @SerializedName("prices") val prices: List<TypePrice>,
     @SerializedName("thumbnail") val thumbnail: Thumbnail,
     @SerializedName("images") val images: List<Thumbnail>,
-    @SerializedName("creators") val creators: CollectionURIComics,
-    @SerializedName("characters") val characters: CollectionURIComics,
-    @SerializedName("stories") val stories: CollectionURIComics,
-    @SerializedName("events") val events: CollectionURIComics
+    @SerializedName("creators") val creators: CollectionURIComic,
+    @SerializedName("characters") val characters: CollectionURIComic,
+    @SerializedName("stories") val stories: CollectionURIComic,
+    @SerializedName("events") val events: CollectionURIComic
 ) : Serializable

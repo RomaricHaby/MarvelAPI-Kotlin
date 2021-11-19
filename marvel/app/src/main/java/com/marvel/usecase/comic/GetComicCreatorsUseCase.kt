@@ -1,14 +1,14 @@
-package com.marvel.usecase.comics
+package com.marvel.usecase.comic
 
-import com.marvel.model.comics.ResponseComicsAPI
+import com.marvel.model.creators.ResponseCreatorsAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 
-class GetComicsByNameUseCase(private val name: String) : UseCase<ResponseComicsAPI?> {
+class GetComicCreatorsUseCase(private val id: String) : UseCase<ResponseCreatorsAPI?> {
 
-    override suspend fun execute(): Result<ResponseComicsAPI?> {
+    override suspend fun execute(): Result<ResponseCreatorsAPI?> {
         return try {
-            val response = ApiClientMarvel.apiServiceMarvel.getComicsByName(name)
+            val response = ApiClientMarvel.apiServiceMarvel.getComicCreators(id)
 
             if (response.isSuccessful && response.body() != null) {
                 return Result.success(response.body())

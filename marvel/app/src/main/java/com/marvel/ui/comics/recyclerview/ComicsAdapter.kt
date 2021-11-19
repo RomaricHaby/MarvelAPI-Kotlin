@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.model.comics.Comics
+import com.marvel.model.comics.Comic
 import com.marvel.ui.detail.ComicsDetailActivity
 
-class ComicsAdapter(list: List<Comics>?, private val context: Context) :
+class ComicsAdapter(list: List<Comic>?, private val context: Context) :
     RecyclerView.Adapter<ComicsViewHolder>() {
-    private var comicsList: List<Comics>? = list
+    private var comicList: List<Comic>? = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComicsViewHolder {
         val view =
@@ -20,9 +20,9 @@ class ComicsAdapter(list: List<Comics>?, private val context: Context) :
     }
 
     override fun onBindViewHolder(holder: ComicsViewHolder, position: Int) {
-        val items = comicsList?.get(position)
+        val items = comicList?.get(position)
         if (items != null) {
-            holder.updateComics(comics = items)
+            holder.updateComics(comic = items)
         }
 
         holder.itemView.setOnClickListener {
@@ -33,7 +33,7 @@ class ComicsAdapter(list: List<Comics>?, private val context: Context) :
     }
 
     override fun getItemCount(): Int {
-        return comicsList?.size!!
+        return comicList?.size!!
     }
 
 

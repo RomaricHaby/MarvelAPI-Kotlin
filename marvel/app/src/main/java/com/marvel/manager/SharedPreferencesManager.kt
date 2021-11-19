@@ -23,12 +23,10 @@ object SharedPreferencesManager {
         editor.apply()
     }
 
-
     fun loadAllCharacter(context: Context) {
         if (DataUser.listCharacterFav.isEmpty()) {
             val gson = Gson()
-            val sharedPreferences: SharedPreferences =
-                context.getSharedPreferences(CHARACTER_FAV, 0)
+            val sharedPreferences: SharedPreferences = context.getSharedPreferences(CHARACTER_FAV, 0)
             val allEntries = sharedPreferences.all
 
             for ((key) in allEntries) {
@@ -38,6 +36,4 @@ object SharedPreferencesManager {
             }
         }
     }
-
-
 }

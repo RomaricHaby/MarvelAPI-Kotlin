@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 
-data class CollectionURIComics(
+data class CollectionURIComic(
     @SerializedName("available") val available: String,
     @SerializedName("collectionURI") val collectionURI: String,
     @SerializedName("role") val role: String?,

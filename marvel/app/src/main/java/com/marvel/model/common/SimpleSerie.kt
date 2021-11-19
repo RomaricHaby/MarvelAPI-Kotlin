@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import com.marvel.model.common.uri.ResourcesURI
 import java.io.Serializable
 
-data class SimpleStories(
+data class SimpleSerie(
     @SerializedName("available") val available: Int,
     @SerializedName("collectionURI") val collectionURI: String,
     @SerializedName("items") val items: List<ResourcesURI>,

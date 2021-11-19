@@ -4,29 +4,29 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.marvel.model.events.Events
-import com.marvel.usecase.events.GetAllEventsUseCase
-import com.marvel.usecase.events.GetEventByNameUseCase
+import com.marvel.model.events.Event
+import com.marvel.usecase.event.GetAllEventsUseCase
+import com.marvel.usecase.event.GetEventByNameUseCase
 import kotlinx.coroutines.launch
 
 class EventViewModel : ViewModel() {
 
-    fun getAllEventFromAPI(): LiveData<List<Events>?> {
-        val liveData = MutableLiveData<List<Events>?>()
+    fun getAllEventFromAPI(): LiveData<List<Event>?> {
+        val liveData = MutableLiveData<List<Event>?>()
         viewModelScope.launch {
             val event = GetAllEventsUseCase().execute().getOrThrow()
-            val data = event?.data?.results
+            val data = event?.dataEvents?.results
             liveData.postValue(data)
         }
         return liveData
     }
 
 
-    fun getSearchEventFromAPI(nameEvent: String): LiveData<List<Events>?> {
-        val liveData = MutableLiveData<List<Events>?>()
+    fun getSearchEventFromAPI(nameEvent: String): LiveData<List<Event>?> {
+        val liveData = MutableLiveData<List<Event>?>()
         viewModelScope.launch {
             val event = GetEventByNameUseCase(nameEvent).execute().getOrThrow()
-            val data = event?.data?.results
+            val data = event?.dataEvents?.results
             liveData.postValue(data)
         }
         return liveData

@@ -3,7 +3,7 @@ package com.marvel.model.creators
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class DataCreator(
+data class DataCreators(
     @SerializedName("offset") val offset: Int,
     @SerializedName("limit") val limit: Int,
     @SerializedName("total") val total: Int,

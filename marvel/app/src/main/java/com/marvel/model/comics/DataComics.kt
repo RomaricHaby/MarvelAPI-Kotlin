@@ -7,5 +7,5 @@ data class DataComics(
     @SerializedName("limit") val limit: Int,
     @SerializedName("total") val total: Int,
     @SerializedName("count") val count: Int,
-    @SerializedName("results") val results: List<Comics>
+    @SerializedName("results") val results: List<Comic>
 )

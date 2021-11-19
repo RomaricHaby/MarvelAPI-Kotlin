@@ -1,14 +1,13 @@
-package com.marvel.usecase.events
+package com.marvel.usecase.serie
 
-import com.marvel.model.events.ResponseEventsAPI
+import com.marvel.model.series.ResponseSeriesAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 
-class GetEventByNameUseCase(private val name: String) : UseCase<ResponseEventsAPI?> {
-
-    override suspend fun execute(): Result<ResponseEventsAPI?> {
+class GetAllSeriesUseCase : UseCase<ResponseSeriesAPI?> {
+    override suspend fun execute(): Result<ResponseSeriesAPI?> {
         return try {
-            val response = ApiClientMarvel.apiServiceMarvel.getEventByName(name)
+            val response = ApiClientMarvel.apiServiceMarvel.getAllSeries()
 
             if (response.isSuccessful && response.body() != null) {
                 return Result.success(response.body())
@@ -18,5 +17,6 @@ class GetEventByNameUseCase(private val name: String) : UseCase<ResponseEventsAP
         } catch (t: Throwable) {
             Result.failure(t)
         }
+
     }
 }

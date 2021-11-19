@@ -7,7 +7,6 @@ import okhttp3.Interceptor
 import okhttp3.Response
 import java.time.LocalDateTime
 
-
 class ApiInterceptorMarvel : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
@@ -15,8 +14,7 @@ class ApiInterceptorMarvel : Interceptor {
 
         val timestamp = LocalDateTime.now().toString()
 
-        val hash =
-            runBlocking { GetMD5UseCase(timestamp + ResourcesManager.privateKey + ResourcesManager.publicKey).execute() }
+        val hash = runBlocking { GetMD5UseCase(timestamp + ResourcesManager.privateKey + ResourcesManager.publicKey).execute() }
 
         requestBuilder.url(
             chain.request().url.newBuilder()

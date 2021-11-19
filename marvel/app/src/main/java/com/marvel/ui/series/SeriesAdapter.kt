@@ -6,12 +6,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.model.series.Series
-import com.marvel.ui.detail.CharacterDetailActivity
+import com.marvel.model.series.Serie
 import com.marvel.ui.detail.SeriesDetailActivity
 
-class SeriesAdapter(list: List<Series>?,  private val context: Context) : RecyclerView.Adapter<SeriesViewHolder>() {
-    private var seriesList: List<Series>? = list
+class SeriesAdapter(list: List<Serie>?, private val context: Context) : RecyclerView.Adapter<SeriesViewHolder>() {
+    private var serieList: List<Serie>? = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeriesViewHolder {
         val view =
@@ -20,9 +19,9 @@ class SeriesAdapter(list: List<Series>?,  private val context: Context) : Recycl
     }
 
     override fun onBindViewHolder(holder: SeriesViewHolder, position: Int) {
-        val items = seriesList?.get(position)
+        val items = serieList?.get(position)
         if (items != null) {
-            holder.updateSeries(series = items)
+            holder.updateSeries(serie = items)
         }
 
 
@@ -34,7 +33,7 @@ class SeriesAdapter(list: List<Series>?,  private val context: Context) : Recycl
     }
 
     override fun getItemCount(): Int {
-        return seriesList?.size!!
+        return serieList?.size!!
     }
 
 

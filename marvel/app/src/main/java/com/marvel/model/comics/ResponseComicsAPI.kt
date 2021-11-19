@@ -9,5 +9,5 @@ data class ResponseComicsAPI(
     @SerializedName("attributionText") val attributionText: String,
     @SerializedName("attributionHTML") val attributionHTML: String,
     @SerializedName("etag") val etag: String,
-    @SerializedName("data") val data: DataComics
+    @SerializedName("data") val dataComics: DataComics
 )

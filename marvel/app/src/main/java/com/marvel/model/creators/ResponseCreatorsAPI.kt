@@ -10,5 +10,5 @@ data class ResponseCreatorsAPI(
     @SerializedName("attributionText") val attributionText: String,
     @SerializedName("attributionHTML") val attributionHTML: String,
     @SerializedName("etag") val etag: String,
-    @SerializedName("data") val data: DataCreator
+    @SerializedName("data") val dataCreators: DataCreators
 ) : Serializable

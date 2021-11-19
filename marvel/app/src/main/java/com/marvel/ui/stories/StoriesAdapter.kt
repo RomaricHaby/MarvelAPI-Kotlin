@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.model.stories.Stories
+import com.marvel.model.stories.Storie
 
-class StoriesAdapter(list: List<Stories>?,  private val context: Context) : RecyclerView.Adapter<StoriesViewHolder>() {
-    private var storiesList: List<Stories>? = list
+class StoriesAdapter(list: List<Storie>?, private val context: Context) : RecyclerView.Adapter<StoriesViewHolder>() {
+    private var storieList: List<Storie>? = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoriesViewHolder {
         val view =
@@ -17,14 +17,14 @@ class StoriesAdapter(list: List<Stories>?,  private val context: Context) : Recy
     }
 
     override fun onBindViewHolder(holder: StoriesViewHolder, position: Int) {
-        val items = storiesList?.get(position)
+        val items = storieList?.get(position)
         if (items != null) {
-            holder.updateStories(stories = items)
+            holder.updateStories(storie = items)
         }
     }
 
     override fun getItemCount(): Int {
-        return storiesList?.size!!
+        return storieList?.size!!
     }
 
 

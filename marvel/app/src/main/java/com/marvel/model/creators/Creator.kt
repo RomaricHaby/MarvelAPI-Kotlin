@@ -1,9 +1,9 @@
 package com.marvel.model.creators
 
 import com.google.gson.annotations.SerializedName
-import com.marvel.model.common.SimpleComics
-import com.marvel.model.common.SimpleEvents
-import com.marvel.model.common.SimpleSeries
+import com.marvel.model.common.SimpleComic
+import com.marvel.model.common.SimpleEvent
+import com.marvel.model.common.SimpleSerie
 import com.marvel.model.common.Thumbnail
 import com.marvel.model.common.type.TypeURL
 import java.io.Serializable
@@ -18,9 +18,9 @@ data class Creator(
     @SerializedName("modified") val modified: String,
     @SerializedName("thumbnail") val thumbnail: Thumbnail,
     @SerializedName("resourceURI") val resourceURI: String,
-    @SerializedName("comics") val comics: SimpleComics,
-    @SerializedName("series") val series: SimpleSeries,
-    @SerializedName("stories") val stories: SimpleComics,
-    @SerializedName("events") val events: SimpleEvents,
+    @SerializedName("comics") val comic: SimpleComic,
+    @SerializedName("series") val serie: SimpleSerie,
+    @SerializedName("stories") val stories: SimpleComic,
+    @SerializedName("events") val event: SimpleEvent,
     @SerializedName("urls") val urls: List<TypeURL>
 ) : Serializable

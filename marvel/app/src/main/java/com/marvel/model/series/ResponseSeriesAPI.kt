@@ -9,5 +9,5 @@ data class ResponseSeriesAPI(
     @SerializedName("attributionText") val attributionText: String,
     @SerializedName("attributionHTML") val attributionHTML: String,
     @SerializedName("etag") val etag: String,
-    @SerializedName("data") val data: DataSeries
+    @SerializedName("data") val dataSeries: DataSeries
 )

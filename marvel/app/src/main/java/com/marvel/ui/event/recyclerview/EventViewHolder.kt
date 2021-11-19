@@ -7,13 +7,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.model.events.Events
+import com.marvel.model.events.Event
 import com.squareup.picasso.Picasso
 
 class EventViewHolder(itemView: View, private val context: Context) :
     RecyclerView.ViewHolder(itemView) {
 
-    fun updateEvent(event: Events) {
+    fun updateEvent(event: Event) {
         val eventImage: ImageView = itemView.findViewById(R.id.viewHolderImageEvent)
         val nameEvent: TextView = itemView.findViewById(R.id.viewHolderNameEvent)
 

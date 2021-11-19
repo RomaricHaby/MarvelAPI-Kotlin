@@ -7,5 +7,5 @@ data class DataStories(
     @SerializedName("limit") val limit: Int,
     @SerializedName("total") val total: Int,
     @SerializedName("count") val count: Int,
-    @SerializedName("results") val results: List<Stories>
+    @SerializedName("results") val results: List<Storie>
 )

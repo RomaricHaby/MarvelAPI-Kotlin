@@ -2,10 +2,7 @@ package com.marvel.model.user
 
 import com.marvel.model.characters.Character
 
-
 object DataUser {
-
-
     var listCharacterFav: ArrayList<Character> = ArrayList()
 
     //Characters
@@ -25,6 +22,4 @@ object DataUser {
     fun isCharacterFav(items: Character?): Boolean {
         return listCharacterFav.contains(items)
     }
-
-
 }

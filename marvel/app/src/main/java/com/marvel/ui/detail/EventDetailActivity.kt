@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.model.events.Events
+import com.marvel.model.events.Event
 import com.marvel.ui.MainActivity
 import com.squareup.picasso.Picasso
 
@@ -16,7 +16,7 @@ class EventDetailActivity : AppCompatActivity() {
     private lateinit var imageEvent: ImageView
     private lateinit var nameEvent: TextView
     private lateinit var descriptionEvent: TextView
-    private lateinit var event: Events
+    private lateinit var event: Event
     private lateinit var homeButton: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +25,7 @@ class EventDetailActivity : AppCompatActivity() {
 
         unitUI()
 
-       event = intent.getSerializableExtra("events") as Events
+       event = intent.getSerializableExtra("events") as Event
 
         setImageCharacter()
         nameEvent.text = event.title

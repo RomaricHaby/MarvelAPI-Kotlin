@@ -1,14 +1,14 @@
 package com.marvel.usecase.character
 
-import com.marvel.model.characters.ResponseCharacterAPI
+import com.marvel.model.characters.ResponseCharactersAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 
-class GetCharacterUseCase(private val id: String) : UseCase<ResponseCharacterAPI?> {
+class GetCharacterUseCase(private val id: String) : UseCase<ResponseCharactersAPI?> {
 
-    override suspend fun execute(): Result<ResponseCharacterAPI?> {
+    override suspend fun execute(): Result<ResponseCharactersAPI?> {
         return try {
-            val response = ApiClientMarvel.apiServiceMarvel.getCharacter(id)
+            val response = ApiClientMarvel.apiServiceMarvel.getCharacterByID(id)
 
             if (response.isSuccessful && response.body() != null) {
                 return Result.success(response.body())

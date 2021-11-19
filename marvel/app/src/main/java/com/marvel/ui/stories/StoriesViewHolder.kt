@@ -5,14 +5,14 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.model.stories.Stories
+import com.marvel.model.stories.Storie
 
 class StoriesViewHolder(itemView: View, private val context: Context) :
     RecyclerView.ViewHolder(itemView) {
 
-    fun updateStories(stories: Stories) {
+    fun updateStories(storie: Storie) {
         val nameStories: TextView = itemView.findViewById(R.id.viewHolderNameStories)
 
-        nameStories.text = stories.title
+        nameStories.text = storie.title
     }
 }

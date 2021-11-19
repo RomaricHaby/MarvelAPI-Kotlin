@@ -1,13 +1,14 @@
-package com.marvel.usecase.comics
+package com.marvel.usecase.comic
 
 import com.marvel.model.comics.ResponseComicsAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 
-class GetAllComicsUseCase : UseCase<ResponseComicsAPI?> {
+class GetComicByNameUseCase(private val name: String) : UseCase<ResponseComicsAPI?> {
+
     override suspend fun execute(): Result<ResponseComicsAPI?> {
         return try {
-            val response = ApiClientMarvel.apiServiceMarvel.getAllComics()
+            val response = ApiClientMarvel.apiServiceMarvel.getComicByName(name)
 
             if (response.isSuccessful && response.body() != null) {
                 return Result.success(response.body())

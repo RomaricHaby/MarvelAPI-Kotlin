@@ -38,6 +38,8 @@ class CharacterDetailActivity : AppCompatActivity() {
     private lateinit var recyclerViewSeries: RecyclerView
     private lateinit var recyclerViewStories: RecyclerView
 
+    private var isQrCodeGenerate = false
+
 
     private lateinit var character: Character
 
@@ -140,19 +142,28 @@ class CharacterDetailActivity : AppCompatActivity() {
 
     private fun qrcodeImage() {
         right.setOnClickListener {
-            try {
-                val barcodeEncoder = BarcodeEncoder()
-                val bitmap = barcodeEncoder.encodeBitmap(character.id.toString(), BarcodeFormat.QR_CODE, 400, 400)
-                imageCharacter.setImageBitmap(bitmap)
+            if(!isQrCodeGenerate){
+                try {
+                    val barcodeEncoder = BarcodeEncoder()
+                    val bitmap = barcodeEncoder.encodeBitmap(character.id.toString(), BarcodeFormat.QR_CODE, 400, 400)
+                    imageCharacter.setImageBitmap(bitmap)
 
-            } catch (e: Exception) {
+                } catch (e: Exception) {
+                    setImageCharacter()
+                }
+
+                isQrCodeGenerate = true
             }
         }
     }
 
     private fun characterImage() {
         left.setOnClickListener {
-            setImageCharacter()
+            if(isQrCodeGenerate){
+                setImageCharacter()
+
+                isQrCodeGenerate = false
+            }
         }
     }
 

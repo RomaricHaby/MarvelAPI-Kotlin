@@ -45,7 +45,7 @@ class ScanQRCodeActivity : AppCompatActivity() {
 
                 val response = runBlocking { GetCharacterUseCase(it.text).execute().getOrThrow() }
 
-                intent.putExtra("character", response?.dataCharacter?.results?.get(0))
+                intent.putExtra("character", response?.dataCharacters?.results?.get(0))
                 this.startActivity(intent)
             }
         }
