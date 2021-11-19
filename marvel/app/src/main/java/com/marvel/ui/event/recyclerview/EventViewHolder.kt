@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.model.events.Event
+import com.marvel.model.event.Event
 import com.squareup.picasso.Picasso
 
 class EventViewHolder(itemView: View, private val context: Context) :

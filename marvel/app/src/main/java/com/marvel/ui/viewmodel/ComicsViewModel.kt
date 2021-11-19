@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.marvel.model.comics.Comic
-import com.marvel.model.creators.Creator
+import com.marvel.model.comic.Comic
+import com.marvel.model.creator.Creator
 import com.marvel.usecase.comic.GetAllComicsUseCase
 import com.marvel.usecase.comic.GetComicByNameUseCase
 import com.marvel.usecase.comic.GetComicCreatorsUseCase

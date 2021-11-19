@@ -14,11 +14,11 @@ import com.google.zxing.BarcodeFormat
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.journeyapps.barcodescanner.BarcodeEncoder
 import com.marvel.R
-import com.marvel.model.characters.Character
+import com.marvel.model.character.Character
 import com.marvel.ui.MainActivity
-import com.marvel.ui.comics.recyclerview.ComicsAdapter
-import com.marvel.ui.series.SeriesAdapter
-import com.marvel.ui.stories.StoriesAdapter
+import com.marvel.ui.comic.recyclerview.ComicsAdapter
+import com.marvel.ui.serie.SeriesAdapter
+import com.marvel.ui.storie.StoriesAdapter
 import com.marvel.ui.viewmodel.CharacterViewModel
 import com.squareup.picasso.Picasso
 

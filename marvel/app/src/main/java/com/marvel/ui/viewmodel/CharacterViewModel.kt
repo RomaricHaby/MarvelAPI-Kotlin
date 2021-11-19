@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.marvel.model.characters.Character
-import com.marvel.model.comics.Comic
-import com.marvel.model.series.Serie
-import com.marvel.model.stories.Storie
+import com.marvel.model.character.Character
+import com.marvel.model.comic.Comic
+import com.marvel.model.serie.Serie
+import com.marvel.model.storie.Storie
 import com.marvel.usecase.character.*
 import kotlinx.coroutines.launch
 

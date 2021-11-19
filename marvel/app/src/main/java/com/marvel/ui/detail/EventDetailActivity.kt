@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.model.events.Event
+import com.marvel.model.event.Event
 import com.marvel.ui.MainActivity
 import com.squareup.picasso.Picasso
 

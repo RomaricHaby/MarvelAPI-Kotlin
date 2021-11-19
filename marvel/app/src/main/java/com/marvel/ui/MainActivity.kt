@@ -7,12 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.marvel.R
-import com.marvel.manager.ResourcesManager
-import com.marvel.manager.SharedPreferencesManager
 import com.marvel.ui.character.CharacterFragment
-import com.marvel.ui.comics.ComicsFragment
+import com.marvel.ui.comic.ComicsFragment
 import com.marvel.ui.event.EventFragment
-import com.marvel.ui.favorites.FavoritesActivity
+import com.marvel.ui.favorite.FavoritesActivity
 import com.marvel.ui.qrcode.ScanQRCodeActivity
 import kotlinx.coroutines.*
 

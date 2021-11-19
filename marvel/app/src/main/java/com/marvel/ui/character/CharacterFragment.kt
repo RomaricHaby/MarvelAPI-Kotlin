@@ -13,7 +13,6 @@ import com.marvel.R
 import com.marvel.ui.character.recyclerview.CharacterAdapter
 import com.marvel.ui.viewmodel.CharacterViewModel
 
-
 class CharacterFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchButton: ImageButton
@@ -57,15 +56,11 @@ class CharacterFragment : Fragment() {
     }
 
     private fun setRecyclerViewCharacter() {
-        // this creates a vertical layout Manager
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         viewModel.getAllCharacterFromAPI().observe(viewLifecycleOwner, { data ->
             val adapter = context?.let { CharacterAdapter(data, it) }
-            // Setting the Adapter with the recyclerview
             recyclerView.adapter = adapter
         })
     }
-
-
 }

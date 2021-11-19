@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.marvel.model.events.Event
+import com.marvel.model.event.Event
 import com.marvel.usecase.event.GetAllEventsUseCase
 import com.marvel.usecase.event.GetEventByNameUseCase
 import kotlinx.coroutines.launch

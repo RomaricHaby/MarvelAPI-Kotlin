@@ -1,6 +1,6 @@
 package com.marvel.usecase.comic
 
-import com.marvel.model.creators.ResponseCreatorsAPI
+import com.marvel.model.creator.ResponseCreatorsAPI
 import com.marvel.network.ApiClientMarvel
 import com.marvel.usecase.UseCase
 

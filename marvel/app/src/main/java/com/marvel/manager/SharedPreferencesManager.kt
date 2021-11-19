@@ -3,7 +3,7 @@ package com.marvel.manager
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
-import com.marvel.model.characters.Character
+import com.marvel.model.character.Character
 import com.marvel.model.user.DataUser
 
 object SharedPreferencesManager {

@@ -9,7 +9,7 @@ import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.model.series.Serie
+import com.marvel.model.serie.Serie
 import com.marvel.ui.MainActivity
 import com.squareup.picasso.Picasso
 

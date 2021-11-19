@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.model.events.Event
+import com.marvel.model.event.Event
 import com.marvel.ui.detail.EventDetailActivity
 
 

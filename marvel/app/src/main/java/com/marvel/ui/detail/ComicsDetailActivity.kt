@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.picasso.OkHttp3Downloader
 import com.marvel.R
-import com.marvel.model.comics.Comic
+import com.marvel.model.comic.Comic
 import com.marvel.ui.MainActivity
 import com.marvel.ui.creator.CreatorAdapter
 import com.marvel.ui.viewmodel.ComicsViewModel

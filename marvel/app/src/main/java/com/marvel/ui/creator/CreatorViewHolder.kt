@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
-import com.marvel.model.creators.Creator
+import com.marvel.model.creator.Creator
 
 
 class CreatorViewHolder(itemView: View, private val context: Context) :

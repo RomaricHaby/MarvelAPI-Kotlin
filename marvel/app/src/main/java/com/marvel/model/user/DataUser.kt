@@ -1,6 +1,6 @@
 package com.marvel.model.user
 
-import com.marvel.model.characters.Character
+import com.marvel.model.character.Character
 
 object DataUser {
     var listCharacterFav: ArrayList<Character> = ArrayList()
