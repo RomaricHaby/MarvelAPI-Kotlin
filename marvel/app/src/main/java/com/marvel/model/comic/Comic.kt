@@ -17,7 +17,7 @@ data class Comic(
     @SerializedName("title") val title: String,
     @SerializedName("issueNumber") val issueNumber: Double,
     @SerializedName("variantDescription") val variantDescription: String,
-    @SerializedName("description") val description: String,
+    @SerializedName("description") val description: String?,
     @SerializedName("modified") val modified: String,
     @SerializedName("isbn") val isbn: String,
     @SerializedName("upc") val upc: String,

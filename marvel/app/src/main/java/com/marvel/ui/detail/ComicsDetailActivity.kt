@@ -80,6 +80,7 @@ class ComicsDetailActivity : AppCompatActivity() {
         }
 
         descriptionComics.text = comic.description
+
         nbrPagesComics.text = comic.pageCount.toString()
 
         priceComics.text = comic.prices[0].price.toString()

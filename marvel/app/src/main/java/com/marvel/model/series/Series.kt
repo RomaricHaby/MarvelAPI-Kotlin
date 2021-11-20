@@ -9,7 +9,7 @@ import java.io.Serializable
 data class Series(
     @SerializedName("id") val id: Int,
     @SerializedName("title") val title: String,
-    @SerializedName("description") val description: String,
+    @SerializedName("description") val description: String?,
     @SerializedName("resourceURI") val resourceURI: String,
     @SerializedName("urls") val urls: List<TypeURL>,
     @SerializedName("startYear") val startYear: Int,
