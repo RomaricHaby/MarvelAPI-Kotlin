@@ -25,22 +25,14 @@ class SeriesDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_series_detail)
 
-
         unitUI()
 
         series = intent.getSerializableExtra("series") as Series
 
         setImageCharacter()
-        nameSeries.text = series.title
 
-        if (series.description == null) {
-            noDescription.visibility = View.VISIBLE
-        }
-        descriptionSeries.text = series.description
-
-
+        setUpDataSeries()
     }
-
 
     private fun unitUI() {
         descriptionSeries = findViewById(R.id.SeriesDetailDescription)
@@ -62,7 +54,6 @@ class SeriesDetailActivity : AppCompatActivity() {
         }
     }
 
-
     private fun setImageCharacter() {
         val builder = Picasso.Builder(this)
         builder.downloader(OkHttp3Downloader(this))
@@ -70,5 +61,15 @@ class SeriesDetailActivity : AppCompatActivity() {
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.ic_launcher_background)
             .into(imageSeries)
+    }
+
+
+    private fun setUpDataSeries() {
+        nameSeries.text = series.title
+
+        if (series.description == null) {
+            noDescription.visibility = View.VISIBLE
+        }
+        descriptionSeries.text = series.description
     }
 }

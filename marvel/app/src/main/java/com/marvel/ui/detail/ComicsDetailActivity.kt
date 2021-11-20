@@ -16,10 +16,8 @@ import com.marvel.ui.MainActivity
 import com.marvel.ui.creator.CreatorAdapter
 import com.marvel.ui.viewmodel.ComicViewModel
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.MainScope
 
-class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() {
+class ComicsDetailActivity : AppCompatActivity() {
     private lateinit var imageComics: ImageView
     private lateinit var nameComics: TextView
     private lateinit var nbrPagesComics: TextView
@@ -39,24 +37,15 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comics_detail)
 
-        comic = intent.getSerializableExtra("comics") as Comic
-
         unitUI()
 
-        setImageComics()
-        nameComics.text = comic.title
+        comic = intent.getSerializableExtra("comics") as Comic
 
-        if (comic.description == null) {
-            noDescription.visibility = VISIBLE
-        }
+        setImageComic()
 
-        descriptionComics.text = comic.description
-        nbrPagesComics.text = comic.pageCount.toString()
+        setUpDataComic()
 
-        priceComics.text = comic.prices[0].price.toString()
-
-
-        setRecyclerView(recyclerViewCreator, "creator")
+        setRecyclerView(recyclerViewCreator)
     }
 
     private fun unitUI() {
@@ -74,6 +63,28 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
 
     }
 
+    private fun setImageComic() {
+        val builder = Picasso.Builder(this)
+        builder.downloader(OkHttp3Downloader(this))
+        builder.build().load(comic.thumbnail.path + "." + comic.thumbnail.extension)
+            .placeholder(R.drawable.ic_launcher_background)
+            .error(R.drawable.ic_launcher_background)
+            .into(imageComics)
+    }
+
+    private fun setUpDataComic() {
+        nameComics.text = comic.title
+
+        if (comic.description == null) {
+            noDescription.visibility = VISIBLE
+        }
+
+        descriptionComics.text = comic.description
+        nbrPagesComics.text = comic.pageCount.toString()
+
+        priceComics.text = comic.prices[0].price.toString()
+    }
+
     private fun setHomeButton() {
         homeButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -83,34 +94,18 @@ class ComicsDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() 
         }
     }
 
-    private fun setImageComics() {
-        val builder = Picasso.Builder(this)
-        builder.downloader(OkHttp3Downloader(this))
-        builder.build().load(comic.thumbnail.path + "." + comic.thumbnail.extension)
-            .placeholder(R.drawable.ic_launcher_background)
-            .error(R.drawable.ic_launcher_background)
-            .into(imageComics)
-    }
-
-
-    private fun setRecyclerView(recyclerView: RecyclerView, type: String) {
-        // this creates a vertical layout Manager
+    private fun setRecyclerView(recyclerView: RecyclerView) {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val id = comic.id
 
-        when (type) {
-            "creator" -> {
-                viewModel.getComicCreatorsFromAPI(id.toString())
-                    .observe(this@ComicsDetailActivity, {
-                        if (it?.isEmpty() == true) {
-                            noCreator.visibility = VISIBLE
-                        }
+        viewModel.getComicCreatorsFromAPI(id.toString())
+            .observe(this@ComicsDetailActivity, {
+                if (it?.isEmpty() == true) {
+                    noCreator.visibility = VISIBLE
+                }
 
-                        recyclerView.adapter = CreatorAdapter(it, this@ComicsDetailActivity)
-                    })
-            }
-        }
+                recyclerView.adapter = CreatorAdapter(it, this@ComicsDetailActivity)
+            })
     }
-
 }

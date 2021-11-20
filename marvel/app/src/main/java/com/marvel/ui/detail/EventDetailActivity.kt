@@ -27,12 +27,10 @@ class EventDetailActivity : AppCompatActivity() {
 
         event = intent.getSerializableExtra("events") as Event
 
-        setImageCharacter()
-        nameEvent.text = event.title
-        descriptionEvent.text = event.description
+        setImageEvent()
 
+        setUpDataEvent()
     }
-
 
     private fun unitUI() {
         descriptionEvent = findViewById(R.id.EventDetailDescription)
@@ -44,7 +42,6 @@ class EventDetailActivity : AppCompatActivity() {
         setHomeButton()
     }
 
-
     private fun setHomeButton() {
         homeButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -54,12 +51,17 @@ class EventDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun setImageCharacter() {
+    private fun setImageEvent() {
         val builder = Picasso.Builder(this)
         builder.downloader(OkHttp3Downloader(this))
         builder.build().load(event.thumbnail.path + "." + event.thumbnail.extension)
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.ic_launcher_background)
             .into(imageEvent)
+    }
+
+    private fun setUpDataEvent() {
+        nameEvent.text = event.title
+        descriptionEvent.text = event.description
     }
 }

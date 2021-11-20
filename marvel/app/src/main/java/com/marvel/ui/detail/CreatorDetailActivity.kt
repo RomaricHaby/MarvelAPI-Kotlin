@@ -11,11 +11,9 @@ import com.marvel.R
 import com.marvel.model.creator.Creator
 import com.marvel.ui.MainActivity
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.MainScope
 
 
-class CreatorDetailActivity : AppCompatActivity(), CoroutineScope by MainScope() {
+class CreatorDetailActivity : AppCompatActivity() {
     private lateinit var creatorImage: ImageView
     private lateinit var creatorName: TextView
     private lateinit var homeButton: FloatingActionButton
@@ -25,15 +23,15 @@ class CreatorDetailActivity : AppCompatActivity(), CoroutineScope by MainScope()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_creator_detail)
+        unitUI()
 
         creator = intent.getSerializableExtra("creators") as Creator
 
-        unitUI()
-
-        creatorName.text = creator.fullName
-
         setImageCreator()
+
+        setUpDataCreator()
     }
+
 
     private fun unitUI() {
         creatorImage = findViewById(R.id.CreatorDetailImage)
@@ -61,4 +59,7 @@ class CreatorDetailActivity : AppCompatActivity(), CoroutineScope by MainScope()
             .into(creatorImage)
     }
 
+    private fun setUpDataCreator() {
+        creatorName.text = creator.fullName
+    }
 }

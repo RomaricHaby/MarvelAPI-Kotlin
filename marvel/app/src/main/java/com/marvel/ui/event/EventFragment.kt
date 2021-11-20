@@ -12,10 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marvel.R
 import com.marvel.ui.event.recyclerview.EventAdapter
 import com.marvel.ui.viewmodel.EventViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.MainScope
 
-class EventFragment : Fragment(), CoroutineScope by MainScope() {
+class EventFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchButton: ImageButton
     private lateinit var searchNameEvent: EditText

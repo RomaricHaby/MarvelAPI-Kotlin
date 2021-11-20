@@ -148,7 +148,6 @@ class CharacterDetailActivity : AppCompatActivity() {
                         R.drawable.ic_baseline_arrow_downward_24
                     )
                 )
-
             } else {
                 recyclerViewComics.visibility = View.VISIBLE
                 showComics.setImageDrawable(
@@ -158,7 +157,6 @@ class CharacterDetailActivity : AppCompatActivity() {
                     )
                 )
             }
-
         }
     }
 
@@ -181,7 +179,6 @@ class CharacterDetailActivity : AppCompatActivity() {
                     )
                 )
             }
-
         }
     }
 
@@ -204,7 +201,6 @@ class CharacterDetailActivity : AppCompatActivity() {
                     )
                 )
             }
-
         }
     }
 
