@@ -17,9 +17,39 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
     }
 
+    flavorDimensions "environment"
+    productFlavors{
+        development {
+            dimension "environment"
+            applicationIdSuffix = ".dev"
+            versionNameSuffix '-dev'
+            ext {
+                BASE_URL = "http://gateway.marvel.com"
+            }
+        }
+
+        recette {
+            dimension "environment"
+            applicationIdSuffix = ".recette"
+            versionNameSuffix '-recette'
+            ext {
+                BASE_URL = "https://46ca812c-7d96-4d73-8cbe-e1aeefccd732.mock.pstmn.io"
+            }
+        }
+
+
+        applicationVariants.all { variant ->
+
+            def dimensions = variant.productFlavors
+            def environment = dimensions[0]
+
+            def BASE_URL = environment.ext.BASE_URL
+            variant.buildConfigField "String", "BASE_URL", "\"$BASE_URL\""
+
+        }
+    }
 
     buildTypes {
         debug {
@@ -62,7 +92,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versionVM"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versionVM"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versionVM"
-
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
