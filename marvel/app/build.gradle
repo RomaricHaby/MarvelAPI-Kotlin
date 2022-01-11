@@ -21,7 +21,7 @@ android {
 
     flavorDimensions "environment"
     productFlavors{
-        development {
+        recette{
             dimension "environment"
             applicationIdSuffix = ".dev"
             versionNameSuffix '-dev'
@@ -30,7 +30,7 @@ android {
             }
         }
 
-        recette {
+        development {
             dimension "environment"
             applicationIdSuffix = ".recette"
             versionNameSuffix '-recette'
