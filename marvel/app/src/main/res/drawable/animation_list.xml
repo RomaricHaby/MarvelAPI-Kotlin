@@ -1,0 +1,1470 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item
+        android:drawable="@raw/image00009"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00010"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00011"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00012"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00013"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00014"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00015"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00016"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00017"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00018"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00019"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00020"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00021"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00022"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00023"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00024"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00025"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00026"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00027"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00028"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00029"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00030"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00031"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00032"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00033"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00034"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00035"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00036"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00037"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00038"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00039"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00040"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00041"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00042"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00043"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00044"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00045"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00046"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00047"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00048"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00049"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00050"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00051"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00052"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00053"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00054"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00055"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00056"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00057"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00058"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00059"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00060"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00061"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00062"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00063"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00064"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00065"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00066"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00067"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00068"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00069"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00070"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00071"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00072"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00073"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00074"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00075"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00076"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00077"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00078"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00079"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00080"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00081"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00082"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00083"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00084"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00085"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00086"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00087"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00088"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00089"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00090"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00091"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00092"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00093"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00094"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00095"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00096"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00097"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00098"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00099"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00100"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00101"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00102"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00103"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00104"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00105"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00106"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00107"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00108"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00109"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00110"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00111"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00112"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00113"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00114"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00115"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00116"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00117"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00118"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00119"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00120"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00121"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00122"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00123"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00124"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00125"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00126"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00127"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00128"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00129"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00130"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00131"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00132"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00133"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00134"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00135"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00136"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00137"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00138"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00139"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00140"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00141"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00142"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00143"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00144"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00145"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00146"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00147"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00148"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00149"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00150"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00151"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00152"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00153"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00154"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00155"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00156"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00157"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00158"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00159"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00160"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00161"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00162"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00163"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00164"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00165"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00166"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00167"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00168"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00169"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00170"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00171"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00172"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00173"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00174"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00175"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00176"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00177"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00178"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00179"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00180"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00181"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00182"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00183"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00184"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00185"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00186"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00187"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00188"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00189"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00190"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00191"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00192"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00193"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00194"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00195"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00196"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00197"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00198"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00199"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00200"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00201"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00202"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00203"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00204"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00205"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00206"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00207"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00208"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00209"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00210"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00211"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00212"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00213"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00214"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00215"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00216"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00217"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00218"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00219"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00220"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00221"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00222"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00223"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00224"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00225"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00226"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00227"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00228"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00229"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00230"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00231"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00232"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00233"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00234"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00235"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00236"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00237"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00238"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00239"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00240"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00241"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00242"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00243"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00244"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00245"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00246"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00247"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00248"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00249"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00250"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00251"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00252"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00253"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00254"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00255"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00256"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00257"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00258"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00259"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00260"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00261"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00262"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00263"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00264"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00265"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00266"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00267"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00268"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00269"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00270"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00271"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00272"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00273"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00274"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00275"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00276"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00277"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00278"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00279"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00280"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00281"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00282"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00283"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00284"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00285"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00286"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00287"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00288"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00289"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00290"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00291"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00292"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00293"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00294"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00295"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00296"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00297"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00298"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00299"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00300"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00301"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00302"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00303"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00304"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00305"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00306"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00307"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00308"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00309"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00310"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00311"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00312"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00313"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00314"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00315"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00316"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00317"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00318"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00319"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00320"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00321"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00322"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00323"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00324"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00325"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00326"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00327"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00328"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00329"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00330"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00331"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00332"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00333"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00334"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00335"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00336"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00337"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00338"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00339"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00340"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00341"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00342"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00343"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00344"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00345"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00346"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00347"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00348"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00349"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00350"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00351"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00352"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00353"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00354"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00355"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00356"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00357"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00358"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00359"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00360"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00361"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00362"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00363"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00364"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00365"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00366"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00367"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00368"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00369"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00370"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00371"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00372"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00373"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00374"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00375"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00376"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00377"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00378"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00379"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00380"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00381"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00382"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00383"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00384"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00385"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00386"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00387"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00388"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00389"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00390"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00391"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00392"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00393"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00394"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00395"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00396"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00397"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00398"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00399"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00400"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00401"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00402"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00403"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00404"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00405"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00406"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00407"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00408"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00409"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00410"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00411"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00412"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00413"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00414"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00415"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00416"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00417"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00418"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00419"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00420"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00421"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00422"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00423"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00424"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00425"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00426"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00427"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00428"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00429"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00430"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00431"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00432"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00433"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00434"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00435"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00436"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00437"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00438"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00439"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00440"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00441"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00442"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00443"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00444"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00445"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00446"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00447"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00448"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00449"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00450"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00451"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00452"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00453"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00454"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00455"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00456"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00457"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00458"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00459"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00460"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00461"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00462"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00463"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00464"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00465"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00466"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00467"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00468"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00469"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00470"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00471"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00472"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00473"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00474"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00475"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00476"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00477"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00478"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00479"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00480"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00481"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00482"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00483"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00484"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00485"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00486"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00487"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00488"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00489"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00490"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00491"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00492"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00493"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00494"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00495"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00496"
+        android:duration="25" />
+    <item
+        android:drawable="@raw/image00497"
+        android:duration="25" />
+</animation-list>
